@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: May 02, 2019 at 06:55 PM
+-- Generation Time: May 02, 2019 at 07:38 PM
 -- Server version: 10.1.26-MariaDB
 -- PHP Version: 7.1.8
 
@@ -46,9 +46,12 @@ CREATE TABLE `data_pesanan` (
 --
 
 INSERT INTO `data_pesanan` (`id`, `id_agen`, `alamat`, `tanggal_pemesanan`, `tipe_barang`, `jumlah_barang`, `harga_zak`, `harga_total`, `nomor_telepon`, `status`) VALUES
-(1, 3, '1', '2019-05-06', '1', 1, 1, 1, '1', ''),
-(5, 4, 'as', '2019-05-27', '1', 2, 2, 2, '2', ''),
-(6, 4, 'asd', '2019-05-05', '2', 1, 1, 3, '1', '');
+(1, 3, '1', '2019-05-06', '1', 1, 1, 1, '1', 'pending'),
+(5, 4, 'as', '2019-05-27', '1', 2, 2, 2, '2', 'pending'),
+(6, 4, 'asd', '2019-05-05', '2', 1, 1, 3, '1', 'pending'),
+(7, 3, '1', '2019-05-06', '2', 2, 2, 2, '2', 'pending'),
+(8, 3, 'a', '2019-05-06', '2', 2, 2, 4, '1', 'pending'),
+(9, 3, 'ad', '2019-05-06', '1', 2, 2, 4, '1', 'pending');
 
 -- --------------------------------------------------------
 
@@ -117,7 +120,10 @@ CREATE TABLE `notifikasi_status_penjualan` (
 INSERT INTO `notifikasi_status_penjualan` (`id`, `id_pesanan`, `status`) VALUES
 (1, 1, 0),
 (2, 5, 0),
-(3, 6, 0);
+(3, 6, 0),
+(4, 7, 0),
+(5, 8, 0),
+(6, 9, 0);
 
 -- --------------------------------------------------------
 
@@ -165,7 +171,7 @@ CREATE TABLE `user_agen` (
 --
 
 INSERT INTO `user_agen` (`id`, `username`, `email`, `password`, `last_login`, `create_date`) VALUES
-(3, 'testing1', 'testing1@gmail.com', '25f9e794323b453885f5181f1b624d0b', '2019-05-01 15:00:57', '2019-05-01 00:24:06'),
+(3, 'testing1', 'testing1@gmail.com', '25f9e794323b453885f5181f1b624d0b', '2019-05-03 00:16:15', '2019-05-01 00:24:06'),
 (4, 'testing2', 'testing2@gmail.com', '25f9e794323b453885f5181f1b624d0b', '2019-05-01 23:08:09', '2019-05-01 14:56:13'),
 (5, 'testing3', 'testing3@gmail.com', '25f9e794323b453885f5181f1b624d0b', '2019-05-01 14:59:38', '2019-05-01 14:59:29');
 
@@ -211,7 +217,7 @@ CREATE TABLE `user_penjualan` (
 --
 
 INSERT INTO `user_penjualan` (`id`, `username`, `email`, `password`, `last_login`, `create_date`) VALUES
-(2, 'testing0', 'testing0@gmail.com', '5f4dcc3b5aa765d61d8327deb882cf99', '2019-05-02 20:10:29', '2019-05-02 17:33:21');
+(2, 'testing0', 'testing0@gmail.com', '5f4dcc3b5aa765d61d8327deb882cf99', '2019-05-03 00:17:22', '2019-05-02 17:33:21');
 
 --
 -- Indexes for dumped tables
@@ -273,7 +279,7 @@ ALTER TABLE `user_penjualan`
 -- AUTO_INCREMENT for table `data_pesanan`
 --
 ALTER TABLE `data_pesanan`
-  MODIFY `id` int(5) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=7;
+  MODIFY `id` int(5) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=11;
 --
 -- AUTO_INCREMENT for table `data_user_admin`
 --
@@ -288,7 +294,7 @@ ALTER TABLE `data_user_agen`
 -- AUTO_INCREMENT for table `notifikasi_status_penjualan`
 --
 ALTER TABLE `notifikasi_status_penjualan`
-  MODIFY `id` int(5) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
+  MODIFY `id` int(5) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=8;
 --
 -- AUTO_INCREMENT for table `user_admin`
 --

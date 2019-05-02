@@ -25,6 +25,12 @@ class Pesanan_M extends CI_Model {
     public function Create_Data_Pesanan($data)
     {
         $this->db->insert('data_pesanan', $data);
+        return $this->db->insert_id();
+    }
+
+    public function Create_Notifikasi_Pesanan($data)
+    {
+        $this->db->insert('notifikasi_status_penjualan', $data);
         return ;
     }
 
@@ -68,6 +74,7 @@ class Pesanan_M extends CI_Model {
     public function Delete_Data_Pesanan($id)
     {
         $this->db->delete('data_pesanan', array('id' => $id));
+        $this->db->delete('notifikasi_status_penjualan', array('id_pesanan' => $id));
 	    return;
     }
 }

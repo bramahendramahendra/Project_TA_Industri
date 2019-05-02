@@ -32,6 +32,7 @@ class Agen_M extends CI_Model {
     {
         $this->db->delete('user_agen', array('id' => $id));
         $this->db->delete('data_user_agen', array('id_agen' => $id));
+        $this->db->delete('data_pesanan', array('id_agen' => $id));
 	    return;
     }
 

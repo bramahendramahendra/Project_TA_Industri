@@ -33,10 +33,18 @@ class Pesanan extends CI_Controller {
                 'tipe_barang' => $this->input->post('tipe_barang'),
                 'jumlah_barang' => $this->input->post('jumlah_barang'),
                 'harga_zak' => $this->input->post('harga_zak'),
-                'harga_total' => $this->input->post('harga_total'),
-                'nomor_telepon' => $this->input->post('nomor_telepon')
+                'harga_total' => $this->input->post('jumlah_barang')*$this->input->post('harga_zak'),
+                'nomor_telepon' => $this->input->post('nomor_telepon'),
+                'status' => 'pending'
             );
-            $this->Pesanan_M->Create_Data_Pesanan($data);
+            $id = $this->Pesanan_M->Create_Data_Pesanan($data);
+
+            $data = array(
+                'id_pesanan' => $id,
+                'status' => 0,
+            );
+
+            $this->Pesanan_M->Create_Notifikasi_Pesanan($data);
             redirect(site_url('Agen/Pesanan'));
         }
     }
@@ -64,7 +72,7 @@ class Pesanan extends CI_Controller {
                 'tipe_barang' => $this->input->post('tipe_barang'),
                 'jumlah_barang' => $this->input->post('jumlah_barang'),
                 'harga_zak' => $this->input->post('harga_zak'),
-                'harga_total' => $this->input->post('harga_total'),
+                'harga_total' => $this->input->post('jumlah_barang')*$this->input->post('harga_zak'),
                 'nomor_telepon' => $this->input->post('nomor_telepon')
             );
             $this->Pesanan_M->Update_Data_Pesanan($id, $data);

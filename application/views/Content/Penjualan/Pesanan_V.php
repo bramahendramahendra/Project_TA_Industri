@@ -55,11 +55,11 @@
                                         <td><?= $value['harga_total']; ?></td>
                                         <td><?= $value['nomor_telepon']; ?></td>
                                         <td>
-                                            <?php if($value['status'] == NULL) { ?>
+                                            <?php if($value['status'] == "pending") { ?>
                                                 <div class="btn-group project-list-ad-bl">
                                                     <button class="btn btn-white btn-xs">Pending</button>
                                                 </div>
-                                            <?php } else if ($value['status'] == "Reject"){ ?>
+                                            <?php } else if ($value['status'] == "reject"){ ?>
                                                 <div class="btn-group project-list-ad-rd">
                                                     <button class="btn btn-white btn-xs">Reject</button>
                                                 </div>

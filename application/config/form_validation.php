@@ -220,14 +220,6 @@ $config = array(
             )
         ),
         array(
-            'field' => 'harga_total',
-            'label' => 'Harga Total',
-            'rules' => 'required',
-            'errors' => array(
-                'required' => '<b style="color:red;">Harga Total anda masih kosong.</b>',
-            )
-        ),
-        array(
             'field' => 'nomor_telepon',
             'label' => 'Nomor Telepon',
             'rules' => 'required',

@@ -43,7 +43,7 @@
                                     foreach ($data_pesanan as $value) { ?>
                                         <td><?= ++$no; ?></td>
                                         <td>
-                                            <?php if($value['status'] == NULL) { ?>
+                                            <?php if($value['status'] == 'pending') { ?>
                                                 <div class="btn-group project-list-ad-bl">
                                                     <button class="btn btn-white btn-xs">Pending</button>
                                                 </div>

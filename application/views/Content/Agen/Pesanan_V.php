@@ -26,16 +26,16 @@
                             <table id="table" data-toggle="table" data-pagination="true" data-search="true" data-show-columns="true" data-show-pagination-switch="true" data-show-refresh="true" data-key-events="true" data-show-toggle="true" data-resizable="true" data-cookie="true" data-cookie-id-table="saveId" data-show-export="true" data-click-to-select="true" data-toolbar="#toolbar">
                                 <thead>
                                     <tr>
-                                        <th data-field="id">No</th>
-                                        <th data-field="name" >Nama Agen</th>
-                                        <th data-field="email" >NPWP</th>
-                                        <th data-field="phone" >Alamat</th>
-                                        <th data-field="company" >Tanggal Pemesanan</th>
-                                        <th data-field="task" >Tipe Barang</th>
-                                        <th data-field="date" >Jumlah Barang</th>
-                                        <th data-field="price" >Harga (Zak)</th>
-                                        <th data-field="price" >Harga Total</th>
-                                        <th data-field="price" >Nomor Telepon</th>
+                                        <th data-field="no">No</th>
+                                        <th data-field="nama_agen" >Nama Agen</th>
+                                        <th data-field="npwp" >NPWP</th>
+                                        <th data-field="alamat" >Alamat</th>
+                                        <th data-field="tanggal_pemesanan" >Tanggal Pemesanan</th>
+                                        <th data-field="tipe_barang" >Tipe Barang</th>
+                                        <th data-field="jumlah_barang" >Jumlah Barang</th>
+                                        <th data-field="harga_zak" >Harga (Zak)</th>
+                                        <th data-field="harga_total" >Harga Total</th>
+                                        <th data-field="nomor_telepon" >Nomor Telepon</th>
                                         <th data-field="action">Action</th>
                                     </tr>
                                 </thead>
@@ -173,18 +173,7 @@
                             </div>
                         </div>
                     </div>
-                    <div class="form-group-inner">
-                        <div class="row">
-                            <div class="col-lg-3">
-                                <label class="login2 pull-right pull-right-pro">Harga Total </label>
-                            </div>
-                            <div class="col-lg-9">
-                                <div class="form-select-list">
-                                    <input type="text" class="form-control input-sm" placeholder="Harga Total" name="harga_total">
-                                </div>
-                            </div>
-                        </div>
-                    </div>
+                    
                     <div class="form-group-inner">
                         <div class="row">
                             <div class="col-lg-3">
@@ -445,18 +434,18 @@
                             </div>
                         </div>
                     </div>
-                    <div class="form-group-inner">
+                    <!-- <div class="form-group-inner">
                         <div class="row">
                             <div class="col-lg-3">
                                 <label class="login2 pull-right pull-right-pro">Harga Total </label>
                             </div>
                             <div class="col-lg-9">
                                 <div class="form-select-list">
-                                    <input type="text" class="form-control input-sm" value="<?= $value['harga_total'] ?>" name="harga_total">
+                                    <input type="text" class="form-control input-sm" value="" name="harga_total">
                                 </div>
                             </div>
                         </div>
-                    </div>
+                    </div> -->
                     <div class="form-group-inner">
                         <div class="row">
                             <div class="col-lg-3">
