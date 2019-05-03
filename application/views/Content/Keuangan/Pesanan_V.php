@@ -36,7 +36,7 @@
                                         <th data-field="harga_zak" >Harga (Zak)</th>
                                         <th data-field="harga_total" >Harga Total</th>
                                         <th data-field="nomor_telepon" >Nomor Telepon</th>
-                                        <th data-field="action">Action</th>
+                                        <th data-field="action">Status</th>
                                     </tr>
                                 </thead>
                                 <tbody>
@@ -53,7 +53,21 @@
                                         <td><?= $value['harga_zak']; ?></td>
                                         <td><?= $value['harga_total']; ?></td>
                                         <td><?= $value['nomor_telepon']; ?></td>
-                                        <td class="datatable-ct"><i class="fa fa-check"></i>
+                                        <td >
+                                        <?php if($value['status'] == "pending") { ?>
+                                                <div class="btn-group project-list-ad-bl">
+                                                    <button class="btn btn-white btn-xs">Pending</button>
+                                                </div>
+                                            <?php } else if ($value['status'] == "reject"){ ?>
+                                                <div class="btn-group project-list-ad-rd">
+                                                    <button class="btn btn-white btn-xs">Reject</button>
+                                                </div>
+                                            <?php } else { ?>
+                                                <div class="btn-group project-list-ad">
+                                                    <button class="btn btn-white btn-xs">Approve</button>
+                                                </div>
+                                            <?php }  ?>
+                                        </td>
                                         </td>
                                     </tr>
                                     <?php } ?>
