@@ -29,16 +29,16 @@
                                 <thead>
                                     <tr>
                                        
-                                        <th data-field="id">No</th>
-                                        <th data-field="name" >Nama Agen</th>
-                                        <th data-field="email" >NPWP</th>
-                                        <th data-field="phone" >Alamat</th>
-                                        <th data-field="company" >Tanggal Pemesanan</th>
-                                        <th data-field="task" >Tipe Barang</th>
-                                        <th data-field="date" >Jumlah Barang</th>
-                                        <th data-field="price" >Harga (Zak)</th>
-                                        <th data-field="price" >Harga Total</th>
-                                        <th data-field="price" >Nomor Telepon</th>
+                                        <th data-field="no">No</th>
+                                        <th data-field="nama" >Nama Agen</th>
+                                        <th data-field="npwp" >NPWP</th>
+                                        <th data-field="alamat" >Alamat</th>
+                                        <th data-field="tanggal" >Tanggal Pemesanan</th>
+                                        <th data-field="tipe" >Tipe Barang</th>
+                                        <th data-field="jumlah" >Jumlah Barang</th>
+                                        <th data-field="harga" >Harga (Zak)</th>
+                                        <th data-field="total" >Harga Total</th>
+                                        <th data-field="telepon" >Nomor Telepon</th>
                                         <th data-field="action">Action</th>
                                     </tr>
                                 </thead>
@@ -57,7 +57,7 @@
                                         <td><?= $value['harga_total']; ?></td>
                                         <td><?= $value['nomor_telepon']; ?></td>
                                         <td>
-                                            <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#Detail-Agen<?php echo  $value['id'] ?>">
+                                            <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#Detail-Pesanan<?php echo  $value['id'] ?>">
                                                 <span class="adminpro-icon adminpro-home-admin"></span>
                                             </button>
                                         </td>
@@ -75,4 +75,299 @@
 <!-- Data table area End-->
 
 <!-- end body -->
+
+<!-- start modal -->
+
+<!-- Detail Pesanan -->
+<?php foreach ($data_pesanan as $value) {?>
+<div id="Detail-Pesanan<?= $value['id']; ?>" class="modal modal-adminpro-general fullwidth-popup-InformationproModal PrimaryModal-bgcolor fade" role="dialog">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header header-color-modal bg-color-1">
+                <h4 class="modal-title">Detail Pemesanan</h4>
+                <div class="modal-close-area modal-close-df">
+                    <a class="close" data-dismiss="modal" href="#"><i class="fa fa-close"></i></a>
+                </div>
+            </div>
+            <div class="modal-body">
+                <!-- start form input pesanan -->
+                
+                    <div class="form-group-inner">
+                        <div class="row">
+                            <div class="col-lg-3">
+                                <label class="login2 pull-right pull-right-pro">Nama Agen </label>
+                            </div>
+                            <div class="col-lg-9">
+                                <div class="form-select-list">
+                                    <input type="text" readonly class="form-control input-sm" value="<?= $value['first_name']." ".$value['last_name'] ?>" name="nama_agen">
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="form-group-inner">
+                        <div class="row">
+                            <div class="col-lg-3">
+                                <label class="login2 pull-right pull-right-pro">NPWP </label>
+                            </div>
+                            <div class="col-lg-9">
+                                <div class="form-select-list">
+                                    <input type="text" readonly class="form-control input-sm" value="<?= $value['npwp'] ?>" name="npwp">
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="form-group-inner">
+                        <div class="row">
+                            <div class="col-lg-3">
+                                <label class="login2 pull-right pull-right-pro">Alamat </label>
+                            </div>
+                            <div class="col-lg-9">
+                                <div class="form-select-list">
+                                    <textarea rows="10" readonly type="text" readonly class="form-control input-sm" name="alamat"><?= $value['alamat'] ?></textarea>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="form-group-inner" id="data_1">
+                        <div class="row">
+                            <div class="col-lg-3">
+                                <label class="login2 pull-right pull-right-pro">Tanggal Pemesanan </label>
+                            </div>
+                            <div class="col-lg-9">
+                                <div class="input-group date">
+                                    <span class="input-group-addon"><i class="fa fa-calendar"></i></span>
+                                    <input type="text" readonly class="form-control" name="tanggal_pemesanan" value="<?= $value['tanggal_pemesanan'] ?>">
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="form-group-inner">
+                        <div class="row">
+                            <div class="col-lg-3">
+                                <label class="login2 pull-right pull-right-pro">Tipe Barang </label>
+                            </div>
+                            <div class="col-lg-9">
+                                <div class="form-select-list">
+                                    <input type="text" readonly class="form-control input-sm" value="<?= $value['tipe_barang'] ?>" name="tipe_barang">
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="form-group-inner">
+                        <div class="row">
+                            <div class="col-lg-3">
+                                <label class="login2 pull-right pull-right-pro">Jumlah Barang </label>
+                            </div>
+                            <div class="col-lg-9">
+                                <div class="form-select-list">
+                                    <input type="text" readonly class="form-control input-sm" value="<?= $value['jumlah_barang'] ?>" name="jumlah_barang">
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="form-group-inner">
+                        <div class="row">
+                            <div class="col-lg-3">
+                                <label class="login2 pull-right pull-right-pro">Harga (Zak) </label>
+                            </div>
+                            <div class="col-lg-9">
+                                <div class="form-select-list">
+                                    <input type="text" readonly class="form-control input-sm" value="<?= $value['harga_zak'] ?>" name="harga_zak">
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="form-group-inner">
+                        <div class="row">
+                            <div class="col-lg-3">
+                                <label class="login2 pull-right pull-right-pro">Harga Total </label>
+                            </div>
+                            <div class="col-lg-9">
+                                <div class="form-select-list">
+                                    <input type="text" readonly class="form-control input-sm" value="<?= $value['harga_total'] ?>" name="harga_total">
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="form-group-inner">
+                        <div class="row">
+                            <div class="col-lg-3">
+                                <label class="login2 pull-right pull-right-pro">Nomor Telepon </label>
+                            </div>
+                            <div class="col-lg-9">
+                                <div class="form-select-list">
+                                    <input type="text" readonly class="form-control input-sm" value="<?= $value['nomor_telepon'] ?>" name="nomor_telepon">
+                                </div>
+                            </div>
+                        </div>
+                    </div>       
+            </div>
+            <div class="modal-footer">
+                <a href="#" data-toggle="modal" data-target="#Edit-Pesanan<?= $value['id']; ?>">Edit</a>
+                <a href="<?= site_url() ?>Admin/Pesanan/Delete_Pesanan/<?= $value['id']; ?>"  >Delete</a>
+                <!-- end form input pesanan -->
+            </div>
+        </div>
+    </div>
+</div>
+<?php } ?>
+<!-- Modal End -->
+
+<!-- Edit Pesanan -->
+<?php foreach ($data_pesanan as $value) {?>
+<div id="Edit-Pesanan<?= $value['id']; ?>" class="modal modal-adminpro-general fullwidth-popup-InformationproModal PrimaryModal-bgcolor fade" role="dialog">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header header-color-modal bg-color-1">
+                <h4 class="modal-title">Edit Pemesanan</h4>
+                <div class="modal-close-area modal-close-df">
+                    <a class="close" data-dismiss="modal" href="#"><i class="fa fa-close"></i></a>
+                </div>
+            </div>
+            <div class="modal-body">
+                <!-- start form input pesanan -->
+                <form action="<?= site_url() ?>Admin/Pesanan/Update_Pesanan/<?= $value['id']; ?>" method="post">
+                    <div class="form-group-inner">
+                        <div class="row">
+                            <div class="col-lg-3">
+                                <label class="login2 pull-right pull-right-pro">Nama Agen </label>
+                            </div>
+                            <div class="col-lg-9">
+                                <div class="form-select-list">
+                                    <input type="text" readonly class="form-control input-sm" value="<?= $value['first_name']." ".$value['last_name'] ?>" name="nama_agen">
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="form-group-inner">
+                        <div class="row">
+                            <div class="col-lg-3">
+                                <label class="login2 pull-right pull-right-pro">NPWP </label>
+                            </div>
+                            <div class="col-lg-9">
+                                <div class="form-select-list">
+                                    <input type="text" readonly class="form-control input-sm" value="<?= $value['npwp'] ?>" name="npwp">
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="form-group-inner">
+                        <div class="row">
+                            <div class="col-lg-3">
+                                <label class="login2 pull-right pull-right-pro">Alamat </label>
+                            </div>
+                            <div class="col-lg-9">
+                                <div class="form-select-list">
+                                    <textarea rows="10" type="text" class="form-control input-sm" name="alamat"><?= $value['alamat'] ?></textarea>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="form-group-inner" id="data_1">
+                        <div class="row">
+                            <div class="col-lg-3">
+                                <label class="login2 pull-right pull-right-pro">Tanggal Pemesanan </label>
+                            </div>
+                            <div class="col-lg-9">
+                                <div class="input-group date">
+                                    <span class="input-group-addon"><i class="fa fa-calendar"></i></span>
+                                    <input type="text" class="form-control" name="tanggal_pemesanan" value="<?= $value['tanggal_pemesanan'] ?>">
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="form-group-inner">
+                        <div class="row">
+                            <div class="col-lg-3">
+                                <label class="login2 pull-right pull-right-pro">Tipe Barang </label>
+                            </div>
+                            <div class="col-lg-9">
+                                <div class="form-select-list">
+                                    <input type="text" class="form-control input-sm" value="<?= $value['tipe_barang'] ?>" name="tipe_barang">
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="form-group-inner">
+                        <div class="row">
+                            <div class="col-lg-3">
+                                <label class="login2 pull-right pull-right-pro">Jumlah Barang </label>
+                            </div>
+                            <div class="col-lg-9">
+                                <div class="form-select-list">
+                                    <input type="text" class="form-control input-sm" value="<?= $value['jumlah_barang'] ?>" name="jumlah_barang">
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="form-group-inner">
+                        <div class="row">
+                            <div class="col-lg-3">
+                                <label class="login2 pull-right pull-right-pro">Harga (Zak) </label>
+                            </div>
+                            <div class="col-lg-9">
+                                <div class="form-select-list">
+                                    <input type="text" class="form-control input-sm" value="<?= $value['harga_zak'] ?>" name="harga_zak">
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- <div class="form-group-inner">
+                        <div class="row">
+                            <div class="col-lg-3">
+                                <label class="login2 pull-right pull-right-pro">Harga Total </label>
+                            </div>
+                            <div class="col-lg-9">
+                                <div class="form-select-list">
+                                    <input type="text" class="form-control input-sm" value="" name="harga_total">
+                                </div>
+                            </div>
+                        </div>
+                    </div> -->
+                    <div class="form-group-inner">
+                        <div class="row">
+                            <div class="col-lg-3">
+                                <label class="login2 pull-right pull-right-pro">Nomor Telepon </label>
+                            </div>
+                            <div class="col-lg-9">
+                                <div class="form-select-list">
+                                    <input type="text" class="form-control input-sm" value="<?= $value['nomor_telepon'] ?>" name="nomor_telepon">
+                                </div>
+                            </div>
+                        </div>
+                    </div>       
+            </div>
+            <div class="modal-footer">
+                <button type="submit" name="close" class="btn btn-custon-four btn-danger btn-lg">Close</button>
+                <button type="submit" name="simpan" class="btn btn-custon-four btn-success btn-lg">Simpan</button>
+                </form>
+                <!-- end form input pesanan -->
+            </div>
+        </div>
+    </div>
+</div>
+<?php } ?>
+
+<!-- Delete Pesanan -->
+<div id="Delete-Pesanan" class="modal modal-adminpro-general FullColor-popup-DangerModal fade" role="dialog">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-close-area modal-close-df">
+                <a class="close" data-dismiss="modal" href="#"><i class="fa fa-close"></i></a>
+            </div>
+            <div class="modal-body">
+                <span class="adminpro-icon adminpro-danger-error modal-check-pro information-icon-pro"></span>
+                <h2>DELETE!</h2>
+                <p>Anda Berhasil Menghapus Pesanan</p>
+            </div>
+            <div class="modal-footer footer-modal-admin">
+                <a data-dismiss="modal" href="#">Done</a>
+                
+            </div>
+        </div>
+    </div>
+</div>
+<!-- end modal -->
 

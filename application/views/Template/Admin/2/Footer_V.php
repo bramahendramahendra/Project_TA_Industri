@@ -6,7 +6,7 @@
                 <div class="row">
                     <div class="col-lg-12">
                         <div class="footer-copy-right">
-                            <p>Copyright &#169; 2018 Colorlib All rights reserved. Template by <a href="https://colorlib.com">Colorlib</a>.</p>
+                            <p>Copyright &#169; 2018.</p>
                         </div>
                     </div>
                 </div>
@@ -33,7 +33,7 @@
                                 <div class="row">
                                     <div class="col-lg-12">
                                         <div class="all-form-element-inner">
-                                            <form action="#" method="post">
+                                            <form action="<?= site_url() ?>Admin/Dashboard/Update_Profile" method="post">
 
                                                 <!-- Nama Depan -->
                                                 <div class="form-group-inner">
@@ -43,7 +43,12 @@
                                                         </div>
                                                         <div class="col-lg-9">
                                                             <div class="form-select-list">
-                                                                <input type="text" class="form-control input-sm" placeholder="Nama Depan">
+                                                            <?php 
+                                                            if($data_user_admin->first_name == null) { ?>
+                                                                <input type="text" class="form-control input-sm" placeholder="Nama Depan" name="first_name">
+                                                            <?php } else { ?>
+                                                                <input type="text" class="form-control input-sm" value="<?= $data_user_admin->first_name ?>" name="first_name">
+                                                            <?php } ?>
                                                             </div>
                                                         </div>
                                                     </div>
@@ -57,27 +62,18 @@
                                                         </div>
                                                         <div class="col-lg-9">
                                                             <div class="form-select-list">
-                                                                <input type="text" class="form-control input-sm" placeholder="Nama Belakang">
-                                                            </div>
-                                                        </div>
-                                                    </div>
-                                                </div>
-
-                                                <!-- Nama Panggilan -->
-                                                <div class="form-group-inner">
-                                                    <div class="row">
-                                                        <div class="col-lg-3">
-                                                            <label class="login2 pull-right pull-right-pro">Nama Panggilan </label>
-                                                        </div>
-                                                        <div class="col-lg-9">
-                                                            <div class="form-select-list">
-                                                                <input type="text" class="form-control input-sm" placeholder="Nama Panggilan">
+                                                            <?php 
+                                                            if($data_user_admin->first_name == null) { ?>
+                                                                <input type="text" class="form-control input-sm" placeholder="Nama Belakang" name="last_name">
+                                                            <?php } else { ?>
+                                                                <input type="text" class="form-control input-sm" value="<?= $data_user_admin->last_name ?>" name="last_name">
+                                                            <?php } ?>
                                                             </div>
                                                         </div>
                                                     </div>
                                                 </div>
                                                 
-                                                <!-- Jenis Kelamin -->
+                                                <!-- Jenis Kelamin
                                                 <div class="form-group-inner">
                                                     <div class="row">
                                                         <div class="col-lg-3 col-md-6 col-sm-6 col-xs-12">
@@ -106,7 +102,7 @@
                                                             </div>
                                                         </div>
                                                     </div>  
-                                                </div>
+                                                </div> -->
 
                                                 <!-- Nama Panggilan -->
                                                 <div class="form-group-inner">
@@ -116,36 +112,16 @@
                                                         </div>
                                                         <div class="col-lg-9">
                                                             <div class="form-select-list">
-                                                                <textarea rows="10" type="text" class="form-control input-sm" placeholder="Nama Panggilan"></Textarea>
+                                                            <?php if($data_user_admin->alamat == null) { ?>
+                                                            <textarea type="text" class="form-control input-sm" placeholder="Alamat" name="alamat"></textarea>
+                                                        <?php } else { ?>
+                                                            <textarea type="text" class="form-control input-sm" name="alamat"><?= $data_user_admin->alamat ?></textarea>
+                                                        <?php } ?>
                                                             </div>
                                                         </div>
                                                     </div>
                                                 </div>
 
-                                                
-                                                
-                                                <div class="form-group-inner">
-                                                    <div class="row">
-                                                        <div class="col-lg-3 col-md-12 col-sm-12 col-xs-12">
-                                                            <label class="login2 pull-right pull-right-pro">Foto</label>
-                                                        </div>
-                                                        <div class="col-lg-9 col-md-12 col-sm-12 col-xs-12">
-                                                            <div class="file-upload-inner ts-forms">
-                                                                <div class="input prepend-big-btn">
-                                                                    <label class="icon-right" for="prepend-big-btn">
-                                                                        <i class="fa fa-download"></i>
-                                                                    </label>
-                                                                    <div class="file-button">
-                                                                        Browse
-                                                                        <input type="file" onchange="document.getElementById('prepend-big-btn').value = this.value;">
-                                                                    </div>
-                                                                    <input type="text" id="prepend-big-btn" placeholder="no file selected">
-                                                                </div>
-                                                            </div>
-                                                        </div>
-                                                    </div>
-                                                </div>
-                                                
                                            
                                         </div>
                                     </div>
@@ -154,8 +130,74 @@
                         </div>  
                     </div>
                     <div class="modal-footer">
-                        <a data-dismiss="modal" href="#">Cancel</a>
-                        <a href="#">Process</a>
+                        <<button type="button" data-dismiss="modal" class="btn btn-custon-four btn-danger btn-lg">Close</button>
+                        <button type="Submit" class="btn btn-custon-four btn-success btn-lg">Simpan</button>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- modal Search Charts -->
+        <div id="Search-Charts" class="modal modal-adminpro-general fullwidth-popup-InformationproModal PrimaryModal-bgcolor fade" role="dialog">
+            <div class="modal-dialog">
+                <div class="modal-content">
+                    <div class="modal-close-area modal-close-df">
+                        <a class="close" data-dismiss="modal" href="#"><i class="fa fa-close"></i></a>
+                    </div>
+                    <div class="modal-body">
+                        <div class="sparkline12-hd">
+                            <div class="main-sparkline12-hd">
+                                <h1>Lengkapi Data Profile</h1>
+                            </div>
+                        </div>
+                        <div class="sparkline12-graph">
+                            <div class="basic-login-form-ad">
+                                <div class="row">
+                                    <div class="col-lg-12">
+                                        <div class="all-form-element-inner">
+                                            <form action="<?= site_url() ?>Admin/Charts/Search_Bulanan" method="post">
+                                                <!-- Bulan -->
+                                                <div class="chosen-select-single mg-b-20">
+                                                    <label>Bulan</label>
+                                                    <select data-placeholder="Choose a Country..." class="chosen-select" tabindex="-1" name="bulan">
+                                                        <option value="">Select</option>
+                                                        <option value="01">Januari</option>
+                                                        <option value="02">Februari</option>
+                                                        <option value="03">Maret</option>
+                                                        <option value="04">April</option>
+                                                        <option value="05">Mei</option>
+                                                        <option value="06">Juni</option>
+                                                        <option value="07">Juli</option>
+                                                        <option value="08">Agustus</option>
+                                                        <option value="09">September</option>
+                                                        <option value="10">Oktober</option>
+                                                        <option value="11">November</option>
+                                                        <option value="12">Desember</option>
+                                                    </select>
+                                                </div>
+                                                <!-- Tahun -->
+                                                <div class="form-group-inner">
+                                                    <div class="row">
+                                                        <div class="col-lg-12">
+                                                            <label>Tahun (ex: 2018)</label>
+                                                            <div class="form-select-list">
+                                                                <input type="text" class="form-control input-sm" placeholder="Tahun" name="tahun">
+                                                            
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                           
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>  
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" data-dismiss="modal" class="btn btn-custon-four btn-danger btn-lg">Close</button>
+                        <button type="Submit" class="btn btn-custon-four btn-success btn-lg">Simpan</button>
                         </form>
                     </div>
                 </div>
@@ -238,15 +280,18 @@
         <script src="<?= base_url(); ?>assets/dashboard/js/data-table/bootstrap-table-resizable.js"></script>
         <script src="<?= base_url(); ?>assets/dashboard/js/data-table/colResizable-1.5.source.js"></script>
         <script src="<?= base_url(); ?>assets/dashboard/js/data-table/bootstrap-table-export.js"></script>
-        <!--  editable JS
+        <!-- input-mask JS
 		    ============================================ -->
-        <script src="<?= base_url(); ?>assets/dashboard/js/jquery.mockjax.js"></script>
-        <script src="<?= base_url(); ?>assets/dashboard/js/mock-active.js"></script>
-        <script src="<?= base_url(); ?>assets/dashboard/js/select2.js"></script>
-        <script src="<?= base_url(); ?>assets/dashboard/js/moment.min.js"></script>
-        <script src="<?= base_url(); ?>assets/dashboard/js/bootstrap-datetimepicker.js"></script>
-        <script src="<?= base_url(); ?>assets/dashboard/js/bootstrap-editable.js"></script>
-        <script src="<?= base_url(); ?>assets/dashboard/js/xediable-active.js"></script>
+        <script src="<?= base_url(); ?>assets/dashboard/js/input-mask/jasny-bootstrap.min.js"></script>
+        <!-- chosen JS
+            ============================================ -->
+        <script src="<?= base_url(); ?>assets/dashboard/js/chosen/chosen.jquery.js"></script>
+        <script src="<?= base_url(); ?>assets/dashboard/js/chosen/chosen-active.js"></script>
+        <!-- select2 JS
+            ============================================ -->
+        <script src="<?= base_url(); ?>assets/dashboard/js/select2/select2.full.min.js"></script>
+        <script src="<?= base_url(); ?>assets/dashboard/js/select2/select2-active.js"></script>
+        
         <!-- main JS
             ============================================ -->
         <script src="<?= base_url(); ?>assets/dashboard/js/main.js"></script>
@@ -281,7 +326,7 @@
                 data: {
                     labels: [<?php foreach ($data_charts as $value) { echo '"' . $value['nama_agen'] . '",';}?>],
                     datasets: [{
-                        label: 'Bar Chart',
+                        label: 'Jumlah Barang',
                         data: [<?php foreach ($data_charts as $value) { echo '"' . $value['jumlah'] . '",';}?>],
                         backgroundColor: [
                             'rgba(255, 99, 132, 0.2)',

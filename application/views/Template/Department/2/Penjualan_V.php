@@ -4,11 +4,11 @@
     <div class="left-sidebar-pro">
         <nav id="sidebar">
             <div class="sidebar-header">
-                <a href="#"><img src="img/message/1.jpg" alt="" />
+                <a href="#"><img src="<?= base_url(); ?>assets/dashboard-depart/img/message/1.jpg" alt="" />
                 </a>
-                <h3>Andrar Son</h3>
-                <p>Developer</p>
-                <strong>AP+</strong>
+                <h3><?= $data_user_penjualan->username; ?></h3>
+                <p><?= $status; ?></p>
+                <strong><?= $status_singkatan; ?></strong>
             </div>
             <div class="left-custom-menu-adp-wrap">
                 <ul class="nav navbar-nav left-sidebar-menu-pro">
@@ -105,7 +105,7 @@
                                     <li class="nav-item">
                                         <a href="#" data-toggle="dropdown" role="button" aria-expanded="false" class="nav-link dropdown-toggle">
                                             <span class="adminpro-icon adminpro-user-rounded header-riht-inf"></span>
-                                            <span class="admin-name">Advanda Cro</span>
+                                            <span class="admin-name"><?= $data_user_penjualan->username; ?></span>
                                             <span class="author-project-icon adminpro-icon adminpro-down-arrow"></span>
                                         </a>
                                         <ul role="menu" class="dropdown-header-top author-log dropdown-menu animated flipInX">
@@ -150,7 +150,7 @@
                                     <ul class="breadcome-menu">
                                         <li><a href="#">Home</a> <span class="bread-slash">/</span>
                                         </li>
-                                        <li><span class="bread-blod">Dashboard</span>
+                                        <li><span class="bread-blod"><?= $name_page; ?></span>
                                         </li>
                                     </ul>
                                 </div>

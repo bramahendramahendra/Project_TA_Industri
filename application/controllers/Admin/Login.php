@@ -15,13 +15,19 @@ class Login extends CI_Controller {
         } elseif(isset($_SESSION['Logged-Admin'])) {
             redirect(site_url('Admin/Dashboard'));
         } else {
-            $data = array();
-            $data['title'] = 'Login Admin';
+            $data = $this->Read_Login();
             // memanggil view Login
             $this->load->view('Template/Admin/1/Header_V');
             $this->load->view('Content/Admin/Login_V',$data);
             $this->load->view('Template/Admin/1/Footer_V');
         }
+    }
+
+    public function Read_Login() {
+        $data = array();
+        $data['title'] = 'PT Zetka Niagatama';
+        $data['title_form'] = 'Login Admin';
+        return $data;
     }
     
     public function Sign_In()
@@ -29,8 +35,7 @@ class Login extends CI_Controller {
         // form validation
         if ($this->form_validation->run('login') == FALSE) {
             // load failed template
-            $data = array();
-            $data['title'] = 'Login Admin'; 
+            $data = $this->Read_Login();
             // memanggil view Login
             $this->load->view('Template/Admin/1/Header_V');
             $this->load->view('Content/Admin/Login_V',$data);
@@ -49,8 +54,7 @@ class Login extends CI_Controller {
                 $this->session->set_flashdata('FailedLogin','Failed');
                 
                 // buat array baru
-                $data = array();
-                $data['title'] = 'Login Admin'; 
+                $data = $this->Read_Login();
 
                 // memanggil view register
                 $this->load->view('Template/Admin/1/Header_V');

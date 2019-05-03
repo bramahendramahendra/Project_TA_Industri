@@ -6,7 +6,8 @@ class Register extends CI_Controller {
 	public function index()
 	{
         $data = array();
-        $data['title'] = 'Registrasi Admin';
+        $data['title'] = 'PT Zetka Niagatama';
+        $data['title_form'] = 'Register Admin';
         // memanggil view register
 		$this->load->view('Template/Admin/1/Header_V');
 		$this->load->view('Content/Admin/Register_V',$data);

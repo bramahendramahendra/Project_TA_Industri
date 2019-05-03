@@ -5,8 +5,9 @@ class Admin_M extends CI_Model {
 
     public function Read_Data_User_Admin($id)
     {
-        $this->db->select('*');
+        $this->db->select('data_user_admin.*, user_admin.last_login');
         $this->db->from('data_user_admin');
+        $this->db->join('user_admin', 'data_user_admin.id_admin = user_admin.id');
         $this->db->where('id_admin',$id);
         $query = $this->db->get();
         return $query->first_row();

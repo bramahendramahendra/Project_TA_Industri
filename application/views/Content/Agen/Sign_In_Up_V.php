@@ -14,16 +14,26 @@
                             <div class="row">
                                 <div class="col-lg-12">
                                     <div class="logo">
-                                        <a href="#"><img src="<?= base_url(); ?>assets/dashboard_agen/img/logo/logo.png" alt="" />
+                                        <a href="#">
+                                            <h1 style="color:#03a9f4; font-size:35px;"><b><?= $title; ?></b></h1>
                                         </a>
                                     </div>
                                 </div>
                             </div>
+                            <?php
+                            if(isset($_SESSION['FailedLogin'])) { ?>
+                                <div class="alert alert-warning alert-success-style3">
+                                    <button type="button" class="close sucess-op" data-dismiss="alert" aria-label="Close">
+                                        <span class="icon-sc-cl" aria-hidden="true">&times;</span>
+                                    </button>
+                                    <span class="adminpro-icon adminpro-warning-danger admin-check-sucess"></span>
+                                    <p><strong>Perhatian!</strong> Username dan Password tidak terdaftar.</p>
+                                </div>
+                            <?php } ?>
                             
                             <div class="row">
                                 <div class="col-lg-12">
-                                    <div class="login-title">
-                                    </div>
+                                        
                                 </div>
                             </div>
                             <div class="row">
@@ -32,6 +42,7 @@
                                         <h3>Sign In</h3>
                                         <p>Agen yang sudah terdaftar, dapat login dibawah ini</p>
                                         <form action="<?= site_url() ?>Agen/Login/Sign_In" method="post">
+                                        
                                             <div class="form-group-inner">
                                                 <label>Username</label>
                                                 <input type="username" class="form-control" placeholder="Enter Username" name="username"/>
@@ -101,7 +112,8 @@
                     <div class="row">
                         <div class="col-lg-12">
                             <div class="logo">
-                                <a href="#"><img src="<?= base_url(); ?>assets/dashboard_agen/img/logo/logo.png" alt="" />
+                                <a href="#">
+                                    <h1 style="color:#03a9f4; font-size:35px;"><b><?= $title; ?></b></h1>
                                 </a>
                             </div>
                         </div>

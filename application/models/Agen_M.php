@@ -14,8 +14,9 @@ class Agen_M extends CI_Model {
 
     public function Read_Data_User_Agen($id)
     {
-        $this->db->select('*');
+        $this->db->select('data_user_agen.*, user_agen.last_login');
         $this->db->from('data_user_agen');
+        $this->db->join('user_agen', 'data_user_agen.id_agen = user_agen.id');
         $this->db->where('id_agen',$id);
         $query = $this->db->get();
         return $query->first_row();

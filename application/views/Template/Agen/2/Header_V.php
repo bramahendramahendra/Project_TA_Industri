@@ -4,12 +4,12 @@
     <head><meta http-equiv="Content-Type" content="text/html; charset=windows-1252">
         
         <meta http-equiv="x-ua-compatible" content="ie=edge">
-        <title>Dashboard v.1.0 | Adminpro - Admin Template</title>
+        <title>PT Zetka Niagatama</title>
         <meta name="description" content="">
         <meta name="viewport" content="width=device-width, initial-scale=1">
         <!-- favicon
             ============================================ -->
-        <link rel="shortcut icon" type="image/x-icon" href="<?= base_url(); ?>assets/dashboard_agen/img/favicon.ico">
+        <link rel="shortcut icon" type="image/x-icon" href="<?= base_url(); ?>assets/landing/images/icons/favicon.ico">
         <!-- Google Fonts
             ============================================ -->
         <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,300i,400,400i,700,700i,800" rel="stylesheet">
@@ -72,7 +72,8 @@
                 <div class="row">
                     <div class="col-lg-3 col-md-3 col-sm-6 col-xs-12">
                         <div class="admin-logo">
-                            <a href="#"><img src="<?= base_url(); ?>assets/dashboard_agen/img/logo/log.png" alt="" />
+                            <a href="#">
+                            <h1 style="color:#03a9f4; font-size:20px;"><b><?= $title; ?></b></h1>
                             </a>
                         </div>
                     </div>

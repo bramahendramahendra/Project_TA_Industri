@@ -14,7 +14,7 @@
                                 <div class="col-lg-12">
                                     <div class="logo">
                                         <a href="#">
-                                        <h1 style="color:white"><b>PT Zetka Niagatama</b></h1>
+                                        <h1 style="color:#03a9f4; font-size:35px;"><b><?= $title; ?></b></h1>
                                         </a>
                                     </div>
                                 </div>
@@ -22,7 +22,7 @@
                             <div class="row">
                                 <div class="col-lg-12">
                                     <div class="login-title">
-                                        <h1><?= $title; ?></h1>
+                                        <h1><?= $title_form; ?></h1>
                                     </div>
                                 </div>
                             </div>

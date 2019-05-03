@@ -4,12 +4,12 @@
     <head>
         <meta charset="utf-8">
         <meta http-equiv="x-ua-compatible" content="ie=edge">
-        <title>Login | Adminpro - Admin Template</title>
+        <title>PT Zetka Niagatama</title>
         <meta name="description" content="">
         <meta name="viewport" content="width=device-width, initial-scale=1">
         <!-- favicon
             ============================================ -->
-        <link rel="shortcut icon" type="image/x-icon" href="<?= base_url(); ?>assets/dashboard_agen/img/favicon.ico">
+        <link rel="shortcut icon" type="image/x-icon" href="<?= base_url(); ?>assets/landing/images/icons/favicon.ico">
         <!-- Google Fonts
             ============================================ -->
         <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,300i,400,400i,700,700i,800" rel="stylesheet">

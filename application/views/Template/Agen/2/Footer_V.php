@@ -4,7 +4,7 @@
                 <div class="row">
                     <div class="col-lg-12">
                         <div class="footer-copy-right">
-                            <p>Copyright &#169; 2018 Colorlib All rights reserved. Template by <a href="https://colorlib.com">Colorlib</a>.</p>
+                            <p>Copyright &#169; 2018.</p>
                         </div>
                     </div>
                 </div>
@@ -18,7 +18,7 @@
             <div class="modal-dialog">
                 <div class="modal-content">
                     <div class="modal-header header-color-modal bg-color-1">
-                        <h4 class="modal-title">Input Pemesanan</h4>
+                        <h4 class="modal-title">Lengkapi Data Profile</h4>
                         <div class="modal-close-area modal-close-df">
                             <a class="close" data-dismiss="modal" href="#"><i class="fa fa-close"></i></a>
                         </div>

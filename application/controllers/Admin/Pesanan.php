@@ -44,7 +44,7 @@ class Pesanan extends CI_Controller {
                 'tipe_barang' => $this->input->post('tipe_barang'),
                 'jumlah_barang' => $this->input->post('jumlah_barang'),
                 'harga_zak' => $this->input->post('harga_zak'),
-                'harga_total' => $this->input->post('harga_total'),
+                'harga_total' => $this->input->post('jumlah_barang')*$this->input->post('harga_zak'),
                 'nomor_telepon' => $this->input->post('nomor_telepon')
             );
             $this->Pesanan_M->Update_Data_Pesanan($id, $data);

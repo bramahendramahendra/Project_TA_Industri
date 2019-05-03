@@ -13,7 +13,7 @@ class Dashboard extends CI_Controller {
 
 	public function index()
 	{
-        $data = $this->Read_Pesanan();
+        $data = $this->Read_Penjualan();
         // memamnggil view dashboard
         $this->load->view('Template/Department/1/Header_V',$data);
         $this->load->view('Template/Department/2/Penjualan_V',$data);
@@ -21,14 +21,14 @@ class Dashboard extends CI_Controller {
         $this->load->view('Template/Department/2/Footer_V');
     }
 
-    public function Read_Pesanan() {
+    public function Read_Penjualan() {
         // membuat array
         $data = array();
-        $data['title'] = 'Admin PT Zetka Niagatama';
+        $data['title'] = 'PT Zetka Niagatama';
         $data['name_page'] = 'Dashboard';
-        $data['status'] = 'Penjualan';
+        $data['status'] = 'Bagian Penjualan';
         $data['status_singkatan'] = 'BPJ';
-        // $data['data_user_keuangan'] = $this->Admin_M->Read_Data_User_Keuangan($_SESSION['Logged-Keuangan']['id']);
+        $data['data_user_penjualan'] = $this->Penjualan_M->Read_Data_User_Penjualan($_SESSION['Logged-Penjualan']['id']);
         $data['notifikasi_pesanan'] = $this->Pesanan_M->Read_Notifikasi_Penjualan_Pesanan();
 
         

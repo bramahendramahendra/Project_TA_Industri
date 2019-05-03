@@ -13,6 +13,16 @@ class Dashboard extends CI_Controller {
 
 	public function index()
 	{
+        $data = $this->Read_Agen();
+        // membuat array
+        
+        // memamnggil view dashboard
+        $this->load->view('Template/Agen/2/Header_V',$data);
+        $this->load->view('Content/Agen/Dashboard_V',$data);
+        $this->load->view('Template/Agen/2/Footer_V');
+    }
+
+    public function Read_Agen() {
         // membuat array
         $data = array();
         $data['title'] = 'PT Zetka Niagatama';
@@ -20,10 +30,7 @@ class Dashboard extends CI_Controller {
         $data['status'] = 'Agen';
         $data['status_singkatan'] = 'AGN';
         $data['data_user_agen'] = $this->Agen_M->Read_Data_User_Agen($_SESSION['Logged-Agen']['id']);
-        // memamnggil view dashboard
-        $this->load->view('Template/Agen/2/Header_V',$data);
-        $this->load->view('Content/Agen/Dashboard_V',$data);
-        $this->load->view('Template/Agen/2/Footer_V');
+        return $data;
     }
 
     public function Update_Profile() {

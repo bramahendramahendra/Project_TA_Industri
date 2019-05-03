@@ -6,10 +6,10 @@ class Penjualan_M extends CI_Model {
     public function Read_Data_User_Penjualan($id)
     {
         $this->db->select('*');
-        $this->db->from('data_pesanan');
-        $this->db->where('id_agen',$id);
+        $this->db->from('user_penjualan');
+        $this->db->where('id',$id);
         $query = $this->db->get();
-        return $query->result_array();
+        return $query->first_row();
     }
 
     public function Create_Data_Penjualan($data)

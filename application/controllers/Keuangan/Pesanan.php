@@ -24,12 +24,11 @@ class Pesanan extends CI_Controller {
     public function Read_Pesanan() 
     {
         // membuat array
-        $data = array();
-        $data['title'] = 'Admin PT Zetka Niagatama';
-        $data['name_page'] = 'Dashboard';
+        $data['title'] = 'PT Zetka Niagatama';
+        $data['name_page'] = 'Pesanan';
         $data['status'] = 'Keuangan';
         $data['status_singkatan'] = 'BKU';
-        // $data['data_user_admin'] = $this->Admin_M->Read_Data_User_Admin($_SESSION['Logged-Admin']['id']);
+        $data['data_user_keuangan'] = $this->Keuangan_M->Read_Data_User_Keuangan($_SESSION['Logged-Keuangan']['id']);
         $data['data_pesanan'] = $this->Pesanan_M->Read_Data_Pesanan();
         return $data;
     }

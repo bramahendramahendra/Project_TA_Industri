@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: May 02, 2019 at 07:38 PM
+-- Generation Time: May 03, 2019 at 06:11 AM
 -- Server version: 10.1.26-MariaDB
 -- PHP Version: 7.1.8
 
@@ -46,12 +46,10 @@ CREATE TABLE `data_pesanan` (
 --
 
 INSERT INTO `data_pesanan` (`id`, `id_agen`, `alamat`, `tanggal_pemesanan`, `tipe_barang`, `jumlah_barang`, `harga_zak`, `harga_total`, `nomor_telepon`, `status`) VALUES
-(1, 3, '1', '2019-05-06', '1', 1, 1, 1, '1', 'pending'),
-(5, 4, 'as', '2019-05-27', '1', 2, 2, 2, '2', 'pending'),
+(5, 4, 'as', '2019-05-27', '1', 2, 2, 2, '2', 'approve'),
 (6, 4, 'asd', '2019-05-05', '2', 1, 1, 3, '1', 'pending'),
-(7, 3, '1', '2019-05-06', '2', 2, 2, 2, '2', 'pending'),
-(8, 3, 'a', '2019-05-06', '2', 2, 2, 4, '1', 'pending'),
-(9, 3, 'ad', '2019-05-06', '1', 2, 2, 4, '1', 'pending');
+(7, 3, '1', '2019-05-06', '2', 2, 2, 4, '2', 'pending'),
+(8, 3, 'a', '2019-05-06', '2', 2, 3, 6, '1', 'pending');
 
 -- --------------------------------------------------------
 
@@ -73,7 +71,8 @@ CREATE TABLE `data_user_admin` (
 
 INSERT INTO `data_user_admin` (`id`, `id_admin`, `first_name`, `last_name`, `alamat`) VALUES
 (1, 4, 'testing3', 'testing3', NULL),
-(2, 5, 'testing4', 'testing4', NULL);
+(2, 5, 'testing4', 'testing4', NULL),
+(3, 6, 'testing5', 'testing5', NULL);
 
 -- --------------------------------------------------------
 
@@ -118,12 +117,10 @@ CREATE TABLE `notifikasi_status_penjualan` (
 --
 
 INSERT INTO `notifikasi_status_penjualan` (`id`, `id_pesanan`, `status`) VALUES
-(1, 1, 0),
-(2, 5, 0),
+(2, 5, 1),
 (3, 6, 0),
 (4, 7, 0),
-(5, 8, 0),
-(6, 9, 0);
+(5, 8, 0);
 
 -- --------------------------------------------------------
 
@@ -149,7 +146,8 @@ INSERT INTO `user_admin` (`id`, `username`, `email`, `password`, `last_login`, `
 (2, 'testing1', 'testing1@gmail.com', '25d55ad283aa400', NULL, '2019-04-26 00:00:00'),
 (3, 'testing2', 'testing2@gmail.com', '25d55ad283aa400', NULL, '2019-04-26 00:00:00'),
 (4, 'testing3', 'testing3@gmail.com', '25d55ad283aa400', NULL, '2019-04-26 11:54:02'),
-(5, 'testing4', 'testing4@gmail.com', '25f9e794323b453885f5181f1b624d0b', '2019-05-02 19:31:17', '2019-04-26 18:02:24');
+(5, 'testing4', 'testing4@gmail.com', '25f9e794323b453885f5181f1b624d0b', '2019-05-03 02:14:08', '2019-04-26 18:02:24'),
+(6, 'testing5', 'testing5@gmail.com', '25f9e794323b453885f5181f1b624d0b', NULL, '2019-05-03 01:56:49');
 
 -- --------------------------------------------------------
 
@@ -171,7 +169,7 @@ CREATE TABLE `user_agen` (
 --
 
 INSERT INTO `user_agen` (`id`, `username`, `email`, `password`, `last_login`, `create_date`) VALUES
-(3, 'testing1', 'testing1@gmail.com', '25f9e794323b453885f5181f1b624d0b', '2019-05-03 00:16:15', '2019-05-01 00:24:06'),
+(3, 'testing1', 'testing1@gmail.com', '25f9e794323b453885f5181f1b624d0b', '2019-05-03 11:10:22', '2019-05-01 00:24:06'),
 (4, 'testing2', 'testing2@gmail.com', '25f9e794323b453885f5181f1b624d0b', '2019-05-01 23:08:09', '2019-05-01 14:56:13'),
 (5, 'testing3', 'testing3@gmail.com', '25f9e794323b453885f5181f1b624d0b', '2019-05-01 14:59:38', '2019-05-01 14:59:29');
 
@@ -195,7 +193,7 @@ CREATE TABLE `user_keuangan` (
 --
 
 INSERT INTO `user_keuangan` (`id`, `username`, `email`, `password`, `last_login`, `create_date`) VALUES
-(3, 'testing0', 'testing0@gmail.com', '5f4dcc3b5aa765d61d8327deb882cf99', '2019-05-02 18:57:33', '2019-05-02 13:53:19');
+(3, 'testing0', 'testing0@gmail.com', '5f4dcc3b5aa765d61d8327deb882cf99', '2019-05-03 10:59:58', '2019-05-02 13:53:19');
 
 -- --------------------------------------------------------
 
@@ -217,7 +215,8 @@ CREATE TABLE `user_penjualan` (
 --
 
 INSERT INTO `user_penjualan` (`id`, `username`, `email`, `password`, `last_login`, `create_date`) VALUES
-(2, 'testing0', 'testing0@gmail.com', '5f4dcc3b5aa765d61d8327deb882cf99', '2019-05-03 00:17:22', '2019-05-02 17:33:21');
+(2, 'testing0', 'testing0@gmail.com', '5f4dcc3b5aa765d61d8327deb882cf99', '2019-05-03 10:53:00', '2019-05-02 17:33:21'),
+(3, 'testing1', 'testing1@gmail.com', '5f4dcc3b5aa765d61d8327deb882cf99', NULL, '2019-05-03 02:39:03');
 
 --
 -- Indexes for dumped tables
@@ -284,7 +283,7 @@ ALTER TABLE `data_pesanan`
 -- AUTO_INCREMENT for table `data_user_admin`
 --
 ALTER TABLE `data_user_admin`
-  MODIFY `id` int(5) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
+  MODIFY `id` int(5) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
 --
 -- AUTO_INCREMENT for table `data_user_agen`
 --
@@ -299,7 +298,7 @@ ALTER TABLE `notifikasi_status_penjualan`
 -- AUTO_INCREMENT for table `user_admin`
 --
 ALTER TABLE `user_admin`
-  MODIFY `id` int(5) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
+  MODIFY `id` int(5) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=7;
 --
 -- AUTO_INCREMENT for table `user_agen`
 --
@@ -314,7 +313,7 @@ ALTER TABLE `user_keuangan`
 -- AUTO_INCREMENT for table `user_penjualan`
 --
 ALTER TABLE `user_penjualan`
-  MODIFY `id` int(5) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;COMMIT;
+  MODIFY `id` int(5) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
 /*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;

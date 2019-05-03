@@ -23,12 +23,24 @@ class Dashboard extends CI_Controller {
     public function Read_Admin() {
         // membuat array
         $data = array();
-        $data['title'] = 'Admin PT Zetka Niagatama';
+        $data['title'] = 'PT Zetka Niagatama';
         $data['name_page'] = 'Dashboard';
         $data['status'] = 'Admin';
         $data['status_singkatan'] = 'ADM';
         $data['data_user_admin'] = $this->Admin_M->Read_Data_User_Admin($_SESSION['Logged-Admin']['id']);
         return $data;
+    }
+
+    public function Update_Profile() {
+        $id = $_SESSION['Logged-Admin']['id'];
+        
+        $data = array(
+            'first_name' => $this->input->post('first_name'),
+            'last_name' => $this->input->post('last_name'),
+            'alamat' => $this->input->post('alamat'),
+        );
+        $this->Admin_M->Update_Data_Admin($id, $data);
+        redirect(site_url('Admin/Dashboard'));
     }
 	
 }

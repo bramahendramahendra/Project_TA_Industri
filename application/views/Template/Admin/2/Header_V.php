@@ -4,12 +4,12 @@
     <head>
         <meta charset="utf-8">
         <meta http-equiv="x-ua-compatible" content="ie=edge">
-        <title>Dashboard v.1.0 | Adminpro - Admin Template</title>
+        <title>PT Zetka Niagatama</title>
         <meta name="description" content="">
         <meta name="viewport" content="width=device-width, initial-scale=1">
         <!-- favicon
             ============================================ -->
-        <link rel="shortcut icon" type="image/x-icon" href="<?= base_url(); ?>assets/dashboard/img/favicon.ico">
+        <link rel="shortcut icon" type="image/x-icon" href="<?= base_url(); ?>assets/landing/images/icons/favicon.ico">
         <!-- Google Fonts
             ============================================ -->
         <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,300i,400,400i,700,700i,800" rel="stylesheet">
@@ -50,6 +50,12 @@
         <!-- charts C3 CSS
             ============================================ -->
         <link rel="stylesheet" href="<?= base_url(); ?>assets/dashboard/css/c3.min.css">
+        <!-- chosen CSS
+            ============================================ -->
+        <link rel="stylesheet" href="<?= base_url(); ?>assets/dashboard/css/chosen/bootstrap-chosen.css">
+        <!-- select2 CSS
+		============================================ -->
+        <link rel="stylesheet" href="<?= base_url(); ?>assets/dashboard/css/select2/select2.min.css">
         <!-- forms CSS
             ============================================ -->
         <link rel="stylesheet" href="<?= base_url(); ?>assets/dashboard/css/form/all-type-forms.css">
@@ -100,11 +106,34 @@
                                 </a>
                             </li>
                             <li class="nav-item">
-                                <a href="<?= site_url() ?>Admin/Charts" role="button" aria-expanded="false" class="nav-link dropdown-toggle">
+                                <a href="#" data-toggle="modal" data-target="#Search-Charts" role="button" aria-expanded="false" class="nav-link dropdown-toggle">
                                     <i class="fa big-icon fa-bar-chart-o"></i> 
                                     <span class="mini-dn">Charts</span> 
                                 </a>
                             </li>
+                            <!-- <li class="nav-item">
+                                <a href="#" data-toggle="dropdown" role="button" aria-expanded="false" class="nav-link dropdown-toggle">
+                                    <i class="fa big-icon fa-bar-chart-o"></i> 
+                                    <span class="mini-dn">Charts</span> 
+                                    <span class="indicator-right-menu mini-dn">
+                                        <i class="fa indicator-mn fa-angle-left"></i>
+                                    </span>
+                                </a>
+                                <div role="menu" class="dropdown-menu left-menu-dropdown pages-left-menu-std animated flipInX">
+                                    <a href="<?= site_url() ?>Admin/Keuangan" class="dropdown-item">Januari</a>
+                                    <a href="<?= site_url() ?>Admin/Penjualan" class="dropdown-item">Februari</a>
+                                    <a href="<?= site_url() ?>Admin/Keuangan" class="dropdown-item">Maret</a>
+                                    <a href="<?= site_url() ?>Admin/Penjualan" class="dropdown-item">April</a>
+                                    <a href="<?= site_url() ?>Admin/Keuangan" class="dropdown-item">Mei</a>
+                                    <a href="<?= site_url() ?>Admin/Penjualan" class="dropdown-item">Juni</a>
+                                    <a href="<?= site_url() ?>Admin/Keuangan" class="dropdown-item">Juli</a>
+                                    <a href="<?= site_url() ?>Admin/Penjualan" class="dropdown-item">Agustus</a>
+                                    <a href="<?= site_url() ?>Admin/Keuangan" class="dropdown-item">September</a>
+                                    <a href="<?= site_url() ?>Admin/Penjualan" class="dropdown-item">Oktober</a>
+                                    <a href="<?= site_url() ?>Admin/Keuangan" class="dropdown-item">November</a>
+                                    <a href="<?= site_url() ?>Admin/Penjualan" class="dropdown-item">Desember</a>
+                                </div>
+                            </li> -->
                             <li class="nav-item">
                                 <a href="#" data-toggle="dropdown" role="button" aria-expanded="false" class="nav-link dropdown-toggle">
                                     <i class="fa big-icon fa-files-o"></i> 

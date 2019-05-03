@@ -25,11 +25,11 @@ class Pesanan extends CI_Controller {
     {
         // membuat array
         $data = array();
-        $data['title'] = 'Admin PT Zetka Niagatama';
-        $data['name_page'] = 'Dashboard';
-        $data['status'] = 'Penjualan';
+        $data['title'] = 'PT Zetka Niagatama';
+        $data['name_page'] = 'Pesanan';
+        $data['status'] = 'Bagian Penjualan';
         $data['status_singkatan'] = 'BPJ';
-        // $data['data_user_admin'] = $this->Admin_M->Read_Data_User_Admin($_SESSION['Logged-Admin']['id']);
+        $data['data_user_penjualan'] = $this->Penjualan_M->Read_Data_User_Penjualan($_SESSION['Logged-Penjualan']['id']);
         $data['data_pesanan'] = $this->Pesanan_M->Read_Data_Pesanan();
         $data['notifikasi_pesanan'] = $this->Pesanan_M->Read_Notifikasi_Penjualan_Pesanan();
         return $data;
