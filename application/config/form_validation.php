@@ -313,5 +313,38 @@ $config = array(
                 'max_length' => '<b style="color:red;">Password maksimal 15 karakter.</b>'
             )
         )
+    ),
+    'ganti-password' => array(
+        array(
+            'field' => 'password_lama',
+            'label' => 'Password Lama',
+            'rules' => 'required|min_length[8]|max_length[20]',
+            'errors' => array(
+                'required' => '<b style="color:red;">Username anda masih kosong.</b>',
+                'min_length' => '<b style="color:red;">Username minimal 8 karakter.</b>',
+                'max_length' => '<b style="color:red;">Username maksimal 20 karakter.</b>'
+            )
+        ),
+        array(
+            'field' => 'password_baru',
+            'label' => 'Password Baru',
+            'rules' => 'required|min_length[8]|max_length[15]',
+            'errors' => array(
+                'required' => '<b style="color:red;">Password anda masih kosong.</b>',
+                'min_length' => '<b style="color:red;">Password minimal 8 karakter.</b>',
+                'max_length' => '<b style="color:red;">Password maksimal 15 karakter.</b>'
+            )
+        ),
+        array(
+            'field' => 'confirm_password_baru',
+            'label' => 'Confirm Password Baru',
+            'rules' => 'required|min_length[8]|max_length[15]|matches[password_baru]',
+            'errors' => array(
+                'required' => '<b style="color:red;">Confirm Password anda masih kosong.</b>',
+                'min_length' => '<b style="color:red;">Confirm Password minimal 8 karakter.</b>',
+                'max_length' => '<b style="color:red;">Confirm Password maksimal 20 karakter.</b>',
+                'matches' => '<b style="color:red;">Confirm Password Barru tidak sesuai dengan Password Baru.</b>',
+            )
+        )
     )
 );

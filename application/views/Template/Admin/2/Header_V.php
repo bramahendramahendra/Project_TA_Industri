@@ -105,11 +105,39 @@
                                     <span class="mini-dn">Pesanan</span>
                                 </a>
                             </li>
-                            <li class="nav-item">
+                            <!-- <li class="nav-item">
                                 <a href="#" data-toggle="modal" data-target="#Search-Charts" role="button" aria-expanded="false" class="nav-link dropdown-toggle">
                                     <i class="fa big-icon fa-bar-chart-o"></i> 
                                     <span class="mini-dn">Charts</span> 
                                 </a>
+                            </li> -->
+                            <li class="nav-item">
+                                <a href="#" data-toggle="dropdown" role="button" aria-expanded="false" class="nav-link dropdown-toggle">
+                                    <i class="fa big-icon fa-bar-chart-o"></i> 
+                                    <span class="mini-dn">Charts</span> 
+                                    <span class="indicator-right-menu mini-dn">
+                                        <i class="fa indicator-mn fa-angle-left"></i>
+                                    </span>
+                                </a>
+                                <div role="menu" class="dropdown-menu left-menu-dropdown pages-left-menu-std animated flipInX">
+                                    <a href="" data-toggle="modal" data-target="#Search-Charts" class="dropdown-item">Chart Bulan</a>
+                                    <a href="" data-toggle="modal" data-target="#Search-Charts-Tahunan" class="dropdown-item">Chart Tahun</a>
+                                </div>
+                            </li>
+
+                            <li class="nav-item">
+                                <a href="#" data-toggle="dropdown" role="button" aria-expanded="false" class="nav-link dropdown-toggle">
+                                    <i class="fa big-icon fa-bar-chart-o"></i> 
+                                    <span class="mini-dn">Charts 2017</span> 
+                                    <span class="indicator-right-menu mini-dn">
+                                        <i class="fa indicator-mn fa-angle-left"></i>
+                                    </span>
+                                </a>
+                                <div role="menu" class="dropdown-menu left-menu-dropdown pages-left-menu-std animated flipInX">
+                                    <a href="<?= site_url() ?>Admin/P2017" class="dropdown-item">Table</a>
+                                    <a href="" data-toggle="modal" data-target="#Search-Charts-2017" class="dropdown-item">Chart</a>
+                                    <a href="<?= site_url() ?>Admin/P2017_Charts" class="dropdown-item">Chart Tahun</a>
+                                </div>
                             </li>
                             <!-- <li class="nav-item">
                                 <a href="#" data-toggle="dropdown" role="button" aria-expanded="false" class="nav-link dropdown-toggle">

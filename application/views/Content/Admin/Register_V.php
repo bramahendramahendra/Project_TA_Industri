@@ -132,7 +132,7 @@
                                 <div class="col-lg-4"></div>
                                 <div class="col-lg-8">
                                     <div class="login-button-pro">
-                                        <a href="" type="submit" class="login-button login-button-rg">Close</a>
+                                        <a href="<?= site_url(); ?>Landing" type="submit" class="login-button login-button-rg">Close</a>
                                         <button type="submit" class="login-button login-button-lg">Register</button>
                                     </div>
                                 </div>

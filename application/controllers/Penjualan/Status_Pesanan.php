@@ -26,8 +26,8 @@ class Status_Pesanan extends CI_Controller {
         // membuat array
         $data = array();
         $data['title'] = 'PT Zetka Niagatama';
-        $data['name_page'] = 'Pesanan';
-        $data['status'] = 'Bagian Penjualan';
+        $data['name_page'] = 'Status Pesanan';
+        $data['status'] = 'Penjualan';
         $data['status_singkatan'] = 'BPJ';
         $data['data_user_penjualan'] = $this->Penjualan_M->Read_Data_User_Penjualan($_SESSION['Logged-Penjualan']['id']);
         $data['data_pesanan'] = $this->Pesanan_M->Read_Data_Status_Pesanan();

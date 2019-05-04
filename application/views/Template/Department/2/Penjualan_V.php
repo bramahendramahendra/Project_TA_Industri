@@ -113,10 +113,6 @@
                                             </li>
                                             <li><a href="#"><span class="adminpro-icon adminpro-user-rounded author-log-ic"></span>My Profile</a>
                                             </li>
-                                            <li><a href="#"><span class="adminpro-icon adminpro-money author-log-ic"></span>User Billing</a>
-                                            </li>
-                                            <li><a href="#"><span class="adminpro-icon adminpro-settings author-log-ic"></span>Settings</a>
-                                            </li>
                                             <li><a href="<?= site_url() ?>Penjualan/Logout"><span class="adminpro-icon adminpro-locked author-log-ic"></span>Log Out</a>
                                             </li>
                                         </ul>
@@ -140,10 +136,7 @@
                             <div class="row">
                                 <div class="col-lg-6 col-md-6 col-sm-6 col-xs-6">
                                     <div class="breadcome-heading">
-                                        <form role="search" class="">
-                                            <input type="text" placeholder="Search..." class="form-control">
-                                            <a href=""><i class="fa fa-search"></i></a>
-                                        </form>
+                                        <button type="button" data-toggle="modal" data-target="#Ganti-Password-<?= $status?>" class="btn btn-custon-rounded-three btn-success">Ganti Password</button>
                                     </div>
                                 </div>
                                 <div class="col-lg-6 col-md-6 col-sm-6 col-xs-6">

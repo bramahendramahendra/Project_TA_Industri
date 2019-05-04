@@ -26,7 +26,7 @@ class Dashboard extends CI_Controller {
         $data = array();
         $data['title'] = 'PT Zetka Niagatama';
         $data['name_page'] = 'Dashboard';
-        $data['status'] = 'Bagian Penjualan';
+        $data['status'] = 'Penjualan';
         $data['status_singkatan'] = 'BPJ';
         $data['data_user_penjualan'] = $this->Penjualan_M->Read_Data_User_Penjualan($_SESSION['Logged-Penjualan']['id']);
         $data['notifikasi_pesanan'] = $this->Pesanan_M->Read_Notifikasi_Penjualan_Pesanan();
@@ -34,5 +34,47 @@ class Dashboard extends CI_Controller {
         
         return $data;
     }
-	
+
+    public function Update_Password($menu) {
+        // form validation
+        if ($this->form_validation->run('ganti-password') == FALSE) {
+            $this->session->set_flashdata('modal_alert','FailedPasswordConfirm');
+            if($menu == 'Dashboard') {
+                redirect(site_url('Penjualan/Dashboard'));
+            } elseif($menu =='Pesanan') {
+                redirect(site_url('Penjualan/Pesanan'));
+            } else {
+                redirect(site_url('Penjualan/Status_Pesanan'));
+            }
+
+        } else {
+            $password = $this->Penjualan_M->Read_Data_User_Penjualan($_SESSION['Logged-Penjualan']['id']);
+            $password_lama = md5($this->input->post('password_lama'));
+        
+            if ($password->password != $password_lama) {
+                // jika validasi dalam kondisi fail
+                $this->session->set_flashdata('modal_alert','FailedPasswordLama');
+                if($menu == 'Dashboard') {
+                    redirect(site_url('Penjualan/Dashboard'));
+                } elseif($menu =='Pesanan') {
+                    redirect(site_url('Penjualan/Pesanan'));
+                } else {
+                    redirect(site_url('Penjualan/Status_Pesanan'));
+                }
+                
+            } else {
+                $data = array();
+                $data['password'] = md5($this->input->post('password_baru'));
+                $this->Penjualan_M->Update_Data_Penjualan($_SESSION['Logged-Penjualan']['id'],$data);
+                $this->session->set_flashdata('modal_alert','SuccessPassword');
+                if($menu == 'Dashboard') {
+                    redirect(site_url('Penjualan/Dashboard'));
+                } elseif($menu =='Pesanan') {
+                    redirect(site_url('Penjualan/Pesanan'));
+                } else {
+                    redirect(site_url('Penjualan/Status_Pesanan'));
+                }
+            }
+        }
+    }
 }

@@ -38,6 +38,12 @@
         <!-- normalize CSS
             ============================================ -->
         <link rel="stylesheet" href="<?= base_url(); ?>assets/dashboard-depart/css/normalize.css">
+        <!-- modals CSS
+            ============================================ -->
+        <link rel="stylesheet" href="<?= base_url(); ?>assets/dashboard-depart/css/modals.css">
+        <!-- buttons CSS
+            ============================================ -->
+        <link rel="stylesheet" href="<?= base_url(); ?>assets/dashboard-depart/css/buttons.css">
         <!-- charts C3 CSS
             ============================================ -->
         <link rel="stylesheet" href="<?= base_url(); ?>assets/dashboard-depart/css/c3.min.css">

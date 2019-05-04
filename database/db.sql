@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: May 03, 2019 at 06:11 AM
+-- Generation Time: May 04, 2019 at 10:13 PM
 -- Server version: 10.1.26-MariaDB
 -- PHP Version: 7.1.8
 
@@ -19,8 +19,40 @@ SET time_zone = "+00:00";
 /*!40101 SET NAMES utf8mb4 */;
 
 --
--- Database: `db`
+-- Database: `bayar_project_industri`
 --
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `data_p2017`
+--
+
+CREATE TABLE `data_p2017` (
+  `id` int(5) NOT NULL,
+  `nama_agen` varchar(50) DEFAULT NULL,
+  `januari` int(20) DEFAULT NULL,
+  `februari` int(20) DEFAULT NULL,
+  `maret` int(20) DEFAULT NULL,
+  `april` int(20) DEFAULT NULL,
+  `mei` int(20) DEFAULT NULL,
+  `juni` int(20) DEFAULT NULL,
+  `juli` int(20) DEFAULT NULL,
+  `agustus` int(20) DEFAULT NULL,
+  `september` int(20) DEFAULT NULL,
+  `oktober` int(20) DEFAULT NULL,
+  `november` int(20) DEFAULT NULL,
+  `desember` int(20) DEFAULT NULL,
+  `total` int(20) DEFAULT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+--
+-- Dumping data for table `data_p2017`
+--
+
+INSERT INTO `data_p2017` (`id`, `nama_agen`, `januari`, `februari`, `maret`, `april`, `mei`, `juni`, `juli`, `agustus`, `september`, `oktober`, `november`, `desember`, `total`) VALUES
+(1, 'testing0', 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 78),
+(4, 'testing2', 1, 0, 0, 0, 0, 0, 7, 0, 0, 0, 0, 0, 8);
 
 -- --------------------------------------------------------
 
@@ -146,7 +178,7 @@ INSERT INTO `user_admin` (`id`, `username`, `email`, `password`, `last_login`, `
 (2, 'testing1', 'testing1@gmail.com', '25d55ad283aa400', NULL, '2019-04-26 00:00:00'),
 (3, 'testing2', 'testing2@gmail.com', '25d55ad283aa400', NULL, '2019-04-26 00:00:00'),
 (4, 'testing3', 'testing3@gmail.com', '25d55ad283aa400', NULL, '2019-04-26 11:54:02'),
-(5, 'testing4', 'testing4@gmail.com', '25f9e794323b453885f5181f1b624d0b', '2019-05-03 02:14:08', '2019-04-26 18:02:24'),
+(5, 'testing4', 'testing4@gmail.com', '25f9e794323b453885f5181f1b624d0b', '2019-05-05 00:33:48', '2019-04-26 18:02:24'),
 (6, 'testing5', 'testing5@gmail.com', '25f9e794323b453885f5181f1b624d0b', NULL, '2019-05-03 01:56:49');
 
 -- --------------------------------------------------------
@@ -193,7 +225,7 @@ CREATE TABLE `user_keuangan` (
 --
 
 INSERT INTO `user_keuangan` (`id`, `username`, `email`, `password`, `last_login`, `create_date`) VALUES
-(3, 'testing0', 'testing0@gmail.com', '5f4dcc3b5aa765d61d8327deb882cf99', '2019-05-03 10:59:58', '2019-05-02 13:53:19');
+(3, 'testing0', 'testing0@gmail.com', '5f4dcc3b5aa765d61d8327deb882cf99', '2019-05-05 00:22:43', '2019-05-02 13:53:19');
 
 -- --------------------------------------------------------
 
@@ -215,12 +247,18 @@ CREATE TABLE `user_penjualan` (
 --
 
 INSERT INTO `user_penjualan` (`id`, `username`, `email`, `password`, `last_login`, `create_date`) VALUES
-(2, 'testing0', 'testing0@gmail.com', '5f4dcc3b5aa765d61d8327deb882cf99', '2019-05-03 10:53:00', '2019-05-02 17:33:21'),
+(2, 'testing0', 'testing0@gmail.com', '5f4dcc3b5aa765d61d8327deb882cf99', '2019-05-05 00:32:31', '2019-05-02 17:33:21'),
 (3, 'testing1', 'testing1@gmail.com', '5f4dcc3b5aa765d61d8327deb882cf99', NULL, '2019-05-03 02:39:03');
 
 --
 -- Indexes for dumped tables
 --
+
+--
+-- Indexes for table `data_p2017`
+--
+ALTER TABLE `data_p2017`
+  ADD PRIMARY KEY (`id`);
 
 --
 -- Indexes for table `data_pesanan`
@@ -275,10 +313,15 @@ ALTER TABLE `user_penjualan`
 --
 
 --
+-- AUTO_INCREMENT for table `data_p2017`
+--
+ALTER TABLE `data_p2017`
+  MODIFY `id` int(5) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
+--
 -- AUTO_INCREMENT for table `data_pesanan`
 --
 ALTER TABLE `data_pesanan`
-  MODIFY `id` int(5) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=11;
+  MODIFY `id` int(5) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=9;
 --
 -- AUTO_INCREMENT for table `data_user_admin`
 --
@@ -293,7 +336,7 @@ ALTER TABLE `data_user_agen`
 -- AUTO_INCREMENT for table `notifikasi_status_penjualan`
 --
 ALTER TABLE `notifikasi_status_penjualan`
-  MODIFY `id` int(5) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=8;
+  MODIFY `id` int(5) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
 --
 -- AUTO_INCREMENT for table `user_admin`
 --
