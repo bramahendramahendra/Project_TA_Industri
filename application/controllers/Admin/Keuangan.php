@@ -46,6 +46,7 @@ class Keuangan extends CI_Controller {
         $data['name_page'] = 'Keuangan';
         $data['status'] = 'Admin';
         $data['status_singkatan'] = 'ADM';
+        $data['nama_tabel'] = 'Data User Keuangan';
         $data['data_user_admin'] = $this->Admin_M->Read_Data_User_Admin($_SESSION['Logged-Admin']['id']);
         $data['data_keuangan'] = $this->Keuangan_M->Read_Data_Keuangan();
         return $data;

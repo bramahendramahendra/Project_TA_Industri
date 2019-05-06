@@ -3,6 +3,8 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 
 class Pesanan_M extends CI_Model {
 
+    
+
     public function Read_Data_Pesanan()
     {
         $this->db->select('data_pesanan.*, data_user_agen.first_name, data_user_agen.last_name, data_user_agen.npwp');

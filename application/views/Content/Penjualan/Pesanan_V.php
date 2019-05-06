@@ -6,7 +6,7 @@
                 <div class="sparkline8-list shadow-reset">
                     <div class="sparkline8-hd">
                         <div class="main-sparkline8-hd">
-                            <h1>Projects Data Table</h1>
+                            <h1><?= $nama_tabel?></h1>
                             <div class="sparkline8-outline-icon">
                                 <span class="sparkline8-collapse-link"><i class="fa fa-chevron-up"></i></span>
                                 <span><i class="fa fa-wrench"></i></span>
@@ -73,6 +73,9 @@
                                     <?php } ?>
                                 </tbody>
                             </table>
+                            <div class="print">                
+                                <a href="<?= site_url() ?>Laporanpdf/DataPesananStatus" class="btn btn-custon-rounded-three btn-success">Print Data Pesanan (pdf)</a>
+                            </div>
                         </div>
                     </div>
                 </div>

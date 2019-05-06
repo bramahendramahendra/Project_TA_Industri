@@ -385,6 +385,10 @@
         <!-- input-mask JS
 		    ============================================ -->
         <script src="<?= base_url(); ?>assets/dashboard/js/input-mask/jasny-bootstrap.min.js"></script>
+        <!-- datapicker JS
+            ============================================ -->
+        <script src="<?= base_url(); ?>assets/dashboard_agen/js/datapicker/bootstrap-datepicker.js"></script>
+        <script src="<?= base_url(); ?>assets/dashboard_agen/js/datapicker/datepicker-active.js"></script>
         <!-- chosen JS
             ============================================ -->
         <script src="<?= base_url(); ?>assets/dashboard/js/chosen/chosen.jquery.js"></script>

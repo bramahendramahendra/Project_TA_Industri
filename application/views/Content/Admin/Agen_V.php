@@ -8,7 +8,7 @@
                 <div class="sparkline8-list shadow-reset">
                     <div class="sparkline8-hd">
                         <div class="main-sparkline8-hd">
-                            <h1>Projects Data Table</h1>
+                            <h1><?= $nama_tabel?></h1>
                             <div class="sparkline8-outline-icon">
                                 <span class="sparkline8-collapse-link"><i class="fa fa-chevron-up"></i></span>
                                 <span><i class="fa fa-wrench"></i></span>
@@ -19,11 +19,7 @@
                     <div class="sparkline8-graph">
                         <div class="datatable-dashv1-list custom-datatable-overright">
                             <div id="toolbar">
-                                <select class="form-control">
-                                    <option value="">Export Basic</option>
-                                    <option value="all">Export All</option>
-                                    <option value="selected">Export Selected</option>
-                                </select>
+                                
                             </div>
                             <table id="table" data-toggle="table" data-pagination="true" data-search="true" data-show-columns="true" data-show-pagination-switch="true" data-show-refresh="true" data-key-events="true" data-show-toggle="true" data-resizable="true" data-cookie="true" data-cookie-id-table="saveId" data-show-export="true" data-click-to-select="true" data-toolbar="#toolbar">
                                 <thead>
@@ -58,6 +54,9 @@
                                 <?php } ?>    
                                 </tbody>
                             </table>
+                            <div class="print">                
+                                <a href="<?= site_url() ?>Laporanpdf/DataAgen" class="btn btn-custon-rounded-three btn-success">Print Data Agen (pdf)</a>
+                            </div>
                         </div>
                     </div>
                 </div>
@@ -70,7 +69,6 @@
 <!-- body end -->     
 
 <!-- start modal -->
-
 <!-- Detail Agen Modal -->
 <?php foreach ($data_agen as $value) {?>
 <div id="Detail-Agen<?php echo  $value['id'] ?>" class="modal modal-adminpro-general default-popup-PrimaryModal PrimaryModal-bgcolor fade" role="dialog">

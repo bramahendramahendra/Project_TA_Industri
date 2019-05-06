@@ -3,6 +3,15 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 
 class Agen_M extends CI_Model {
 
+    public function Find_Data_Nama_Agen($data)
+    {
+        $this->db->select('id_agen');
+        $this->db->from('data_user_agen');
+        $this->db->where($data);
+        $query = $this->db->get();
+        return $query->first_row();
+    }
+
     public function Read_Data_Agen()
     {
         $this->db->select('data_user_agen.*, user_agen.email');

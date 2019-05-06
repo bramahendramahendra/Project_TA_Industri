@@ -28,6 +28,7 @@ class Pesanan extends CI_Controller {
         $data['name_page'] = 'Pesanan';
         $data['status'] = 'Keuangan';
         $data['status_singkatan'] = 'BKU';
+        $data['nama_tabel'] = 'Data Pesanan';
         $data['data_user_keuangan'] = $this->Keuangan_M->Read_Data_User_Keuangan($_SESSION['Logged-Keuangan']['id']);
         $data['data_pesanan'] = $this->Pesanan_M->Read_Data_Pesanan();
         return $data;

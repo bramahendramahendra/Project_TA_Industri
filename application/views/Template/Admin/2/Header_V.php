@@ -56,6 +56,9 @@
         <!-- select2 CSS
 		============================================ -->
         <link rel="stylesheet" href="<?= base_url(); ?>assets/dashboard/css/select2/select2.min.css">
+        <!-- datapicker CSS
+            ============================================ -->
+        <link rel="stylesheet" href="<?= base_url(); ?>assets/dashboard_agen/css/datapicker/datepicker3.css">
         <!-- forms CSS
             ============================================ -->
         <link rel="stylesheet" href="<?= base_url(); ?>assets/dashboard/css/form/all-type-forms.css">

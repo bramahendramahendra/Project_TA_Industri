@@ -56,6 +56,7 @@ class Pesanan extends CI_Controller {
         $data['name_page'] = 'Pesanan';
         $data['status'] = 'Agen';
         $data['status_singkatan'] = 'AGN';
+        $data['nama_tabel'] = 'Data Pesanan';
         $data['data_user_agen'] = $this->Agen_M->Read_Data_User_Agen($_SESSION['Logged-Agen']['id']);
         $data['data_pesanan'] = $this->Pesanan_M->Read_Data_Pesanan_Agen($_SESSION['Logged-Agen']['id']);
         return $data;

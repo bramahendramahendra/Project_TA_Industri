@@ -8,7 +8,7 @@
                 <div class="sparkline8-list shadow-reset">
                     <div class="sparkline8-hd">
                         <div class="main-sparkline8-hd">
-                            <h1>Projects Data Table</h1>
+                            <h1><?= $nama_tabel?></h1>
                             <div class="sparkline8-outline-icon">
                                 <span class="sparkline8-collapse-link"><i class="fa fa-chevron-up"></i></span>
                                 <span><i class="fa fa-wrench"></i></span>
@@ -19,16 +19,11 @@
                     <div class="sparkline8-graph">
                         <div class="datatable-dashv1-list custom-datatable-overright">
                             <div id="toolbar">
-                                <select class="form-control">
-                                    <option value="">Export Basic</option>
-                                    <option value="all">Export All</option>
-                                    <option value="selected">Export Selected</option>
-                                </select>
+                                <button type="button" data-toggle="modal" data-target="#Create-Pesanan" class="btn btn-custon-rounded-three btn-success">Input Pemesanan</button>
                             </div>
                             <table id="table" data-toggle="table" data-pagination="true" data-search="true" data-show-columns="true" data-show-pagination-switch="true" data-show-refresh="true" data-key-events="true" data-show-toggle="true" data-resizable="true" data-cookie="true" data-cookie-id-table="saveId" data-show-export="true" data-click-to-select="true" data-toolbar="#toolbar">
                                 <thead>
                                     <tr>
-                                       
                                         <th data-field="no">No</th>
                                         <th data-field="nama" >Nama Agen</th>
                                         <th data-field="npwp" >NPWP</th>
@@ -65,6 +60,9 @@
                                 <?php } ?>
                                 </tbody>
                             </table>
+                            <div class="print">                
+                                <a href="<?= site_url() ?>Laporanpdf/DataPesanan" class="btn btn-custon-rounded-three btn-success">Print Data Pesanan (pdf)</a>
+                            </div>
                         </div>
                     </div>
                 </div>
@@ -77,6 +75,151 @@
 <!-- end body -->
 
 <!-- start modal -->
+<!-- Create Pesanan -->
+<div id="Create-Pesanan" class="modal modal-adminpro-general fullwidth-popup-InformationproModal PrimaryModal-bgcolor fade" role="dialog">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header header-color-modal bg-color-1">
+                <h4 class="modal-title">Input Pemesanan</h4>
+                <div class="modal-close-area modal-close-df">
+                    <a class="close" data-dismiss="modal" href="#"><i class="fa fa-close"></i></a>
+                </div>
+            </div>
+            <div class="modal-body">
+                <!-- start form input pesanan -->
+                <form action="<?= site_url() ?>Admin/Pesanan/Create_Pesanan" method="post">
+                    <div class="form-group-inner">
+                        <div class="row">
+                            <div class="col-lg-3">
+                                <label class="login2 pull-right pull-right-pro">Nama Depan </label>
+                            </div>
+                            <div class="col-lg-9">
+                                <div class="form-select-list">
+                                    <input type="text" class="form-control input-sm" placeholder="Nama Depan " name="nama_depan">
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="form-group-inner">
+                        <div class="row">
+                            <div class="col-lg-3">
+                                <label class="login2 pull-right pull-right-pro">Nama Belakang </label>
+                            </div>
+                            <div class="col-lg-9">
+                                <div class="form-select-list">
+                                    <input type="text" class="form-control input-sm" placeholder="Nama Belakang " name="nama_belakang">
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="form-group-inner">
+                        <div class="row">
+                            <div class="col-lg-3">
+                                <label class="login2 pull-right pull-right-pro">NPWP </label>
+                            </div>
+                            <div class="col-lg-9">
+                                <div class="form-select-list">
+                                    <input type="text" class="form-control input-sm" placeholder="NPWP" name="npwp">
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="form-group-inner">
+                        <div class="row">
+                            <div class="col-lg-3">
+                                <label class="login2 pull-right pull-right-pro">Alamat </label>
+                            </div>
+                            <div class="col-lg-9">
+                                <div class="form-select-list">
+                                    <textarea rows="10" type="text" class="form-control input-sm" style="border:1px solid #8c8a8c;" placeholder="Alamat" name="alamat"></textarea>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="form-group-inner" id="data_1">
+                        <div class="row">
+                            <div class="col-lg-3">
+                                <label class="login2 pull-right pull-right-pro">Tanggal Pemesanan </label>
+                            </div>
+                            <div class="col-lg-9">
+                                <div class="input-group date">
+                                    <span class="input-group-addon"><i class="fa fa-calendar"></i></span>
+                                    <input type="text" class="form-control" name="tanggal_pemesanan" placeholder="Tanggal Pemesanan">
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="form-group-inner">
+                        <div class="row">
+                            <div class="col-lg-3">
+                                <label class="login2 pull-right pull-right-pro">Tipe Barang </label>
+                            </div>
+                            <div class="col-lg-9">
+                                <div class="form-select-list">
+                                    <input type="text" class="form-control input-sm" placeholder="Tipe Barang" name="tipe_barang">
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="form-group-inner">
+                        <div class="row">
+                            <div class="col-lg-3">
+                                <label class="login2 pull-right pull-right-pro">Jumlah Barang </label>
+                            </div>
+                            <div class="col-lg-9">
+                                <div class="form-select-list">
+                                    <input type="text" class="form-control input-sm" placeholder="Jumlah Baranga" name="jumlah_barang">
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="form-group-inner">
+                        <div class="row">
+                            <div class="col-lg-3">
+                                <label class="login2 pull-right pull-right-pro">Harga (Zak) </label>
+                            </div>
+                            <div class="col-lg-9">
+                                <div class="form-select-list">
+                                    <input type="text" class="form-control input-sm" placeholder="Harga (Zak)" name="harga_zak">
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- <div class="form-group-inner">
+                        <div class="row">
+                            <div class="col-lg-3">
+                                <label class="login2 pull-right pull-right-pro">Harga Total </label>
+                            </div>
+                            <div class="col-lg-9">
+                                <div class="form-select-list">
+                                    <input type="text" readonly class="form-control input-sm" placehplder="Harga Total" name="harga_total">
+                                </div>
+                            </div>
+                        </div>
+                    </div> -->
+                    <div class="form-group-inner">
+                        <div class="row">
+                            <div class="col-lg-3">
+                                <label class="login2 pull-right pull-right-pro">Nomor Telepon </label>
+                            </div>
+                            <div class="col-lg-9">
+                                <div class="form-select-list">
+                                    <input type="text" class="form-control input-sm" placeholder="Nomor Telepon" name="nomor_telepon">
+                                </div>
+                            </div>
+                        </div>
+                    </div>       
+            </div>
+            <div class="modal-footer">
+                <button type="button" data-dismiss="modal" name="close" class="btn btn-custon-four btn-danger btn-lg">Close</button>
+                <button type="submit" name="simpan" class="btn btn-custon-four btn-success btn-lg">Simpan</button>
+                </form>
+                <!-- end form input pesanan -->
+            </div>
+        </div>
+    </div>
+</div>
 
 <!-- Detail Pesanan -->
 <?php foreach ($data_pesanan as $value) {?>
@@ -123,7 +266,7 @@
                             </div>
                             <div class="col-lg-9">
                                 <div class="form-select-list">
-                                    <textarea rows="10" readonly type="text" readonly class="form-control input-sm" name="alamat"><?= $value['alamat'] ?></textarea>
+                                    <textarea rows="10" readonly type="text" style="border:1px solid #8c8a8c;" readonly class="form-control input-sm" name="alamat"><?= $value['alamat'] ?></textarea>
                                 </div>
                             </div>
                         </div>
@@ -259,7 +402,7 @@
                             </div>
                             <div class="col-lg-9">
                                 <div class="form-select-list">
-                                    <textarea rows="10" type="text" class="form-control input-sm" name="alamat"><?= $value['alamat'] ?></textarea>
+                                    <textarea rows="10" type="text" class="form-control input-sm" style="border:1px solid #8c8a8c;" name="alamat"><?= $value['alamat'] ?></textarea>
                                 </div>
                             </div>
                         </div>

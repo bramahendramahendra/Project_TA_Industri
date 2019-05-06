@@ -28,6 +28,7 @@ class Agen extends CI_Controller {
         $data['name_page'] = 'Agen';
         $data['status'] = 'Admin';
         $data['status_singkatan'] = 'ADM';
+        $data['nama_tabel'] = 'Data Agen';
         $data['data_user_admin'] = $this->Admin_M->Read_Data_User_Admin($_SESSION['Logged-Admin']['id']);
         $data['data_agen'] = $this->Agen_M->Read_Data_Agen();
         return $data;
