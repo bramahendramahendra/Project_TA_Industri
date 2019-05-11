@@ -20,10 +20,12 @@ class Charts extends CI_Controller {
         $data['status'] = 'Admin';
         $data['status_singkatan'] = 'ADM';
         $data['data_user_admin'] = $this->Admin_M->Read_Data_User_Admin($_SESSION['Logged-Admin']['id']);
+        $data['data_barang_tipe'] = $this->Charts_M->Read_Select_Chart_Barang_Tipe();
 
         $tahun = $this->input->post('tahun');
         $data['data_charts'] = $this->Charts_M->Read_Data_Chart_Barang_Tahunan($tahun);
 
+        $data['tipe'] = NULL;
         $data['bulan'] = '-';
         $data['tahun'] = $tahun;
         // memamnggil view dashboard
@@ -41,11 +43,13 @@ class Charts extends CI_Controller {
         $data['status'] = 'Admin';
         $data['status_singkatan'] = 'ADM';
         $data['data_user_admin'] = $this->Admin_M->Read_Data_User_Admin($_SESSION['Logged-Admin']['id']);
+        $data['data_barang_tipe'] = $this->Charts_M->Read_Select_Chart_Barang_Tipe();
 
         $bulan = $this->input->post('bulan');
         $tahun = $this->input->post('tahun');
         $data['data_charts'] = $this->Charts_M->Read_Data_Chart_Barang_Bulanan($bulan, $tahun);
-        
+        $data['tipe'] = NULL;
+
         if($bulan == 1) {
             $data['bulan'] = 'Januari';
         } elseif($bulan == 2) {
@@ -73,6 +77,30 @@ class Charts extends CI_Controller {
         }
 
         $data['tahun'] = $tahun;
+        // memamnggil view dashboard
+        $this->load->view('Template/Admin/2/Header_V',$data);
+        $this->load->view('Content/Admin/Charts_V',$data);
+        $this->load->view('Template/Admin/2/Footer_V');
+    }
+
+    public function Search_Tipe()
+	{
+        // membuat array
+        $data = array();
+        $data['title'] = 'Admin PT Zetka Niagatama';
+        $data['name_page'] = 'Charts';
+        $data['status'] = 'Admin';
+        $data['status_singkatan'] = 'ADM';
+        $data['data_user_admin'] = $this->Admin_M->Read_Data_User_Admin($_SESSION['Logged-Admin']['id']);
+        $data['data_barang_tipe'] = $this->Charts_M->Read_Select_Chart_Barang_Tipe();
+        $tipe_barang = $this->input->post('tipe_barang');
+        
+        $data['data_charts'] = $this->Charts_M->Read_Data_Chart_Barang_Tipe($tipe_barang);
+
+        $data['tipe'] = $tipe_barang;
+        $data['bulan'] = NULL;
+        $data['tahun'] = NULL;
+
         // memamnggil view dashboard
         $this->load->view('Template/Admin/2/Header_V',$data);
         $this->load->view('Content/Admin/Charts_V',$data);

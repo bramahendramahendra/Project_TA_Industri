@@ -6,8 +6,12 @@
                 <div class="charts-single-pro shadow-reset nt-mg-b-30">
                     <div class="alert-title">
                         <h2>Bar Chart</h2>
-                        <p>Bulan : <?= $bulan ?>. </p>
-                        <p>Tahun : <?= $tahun ?>. </p>
+                        <?php if(($bulan != NULL) && ($tahun != NULL))  { ?>
+                            <p>Bulan : <?= $bulan ?>. </p>
+                            <p>Tahun : <?= $tahun ?>. </p>
+                        <?php } else { ?>
+                            <p>Tipe Barang : <?= $tipe ?>. </p>
+                        <?php }  ?>
                     </div>
                     <div id="bar1-chart">
                         <canvas id="barchart1"></canvas>

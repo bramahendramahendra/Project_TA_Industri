@@ -158,7 +158,7 @@ $config = array(
     ),
     'signin-agen' => array(
         array(
-            'field' => 'username',
+            'field' => 'usernameIn',
             'label' => 'Username',
             'rules' => 'required|min_length[8]|max_length[20]',
             'errors' => array(
@@ -168,7 +168,7 @@ $config = array(
             )
         ),
         array(
-            'field' => 'password',
+            'field' => 'passwordIn',
             'label' => 'Password',
             'rules' => 'required|min_length[8]|max_length[15]',
             'errors' => array(
@@ -346,5 +346,43 @@ $config = array(
                 'matches' => '<b style="color:red;">Confirm Password Barru tidak sesuai dengan Password Baru.</b>',
             )
         )
+    ),
+    'create-agen' => array(
+        array(
+            'field' => 'first_name',
+            'label' => 'First Name',
+            'rules' => 'required',
+            'errors' => array(
+                'required' => '<b style="color:red;">Nama Depan anda masih kosong.</b>',
+            )
+        ),
+        array(
+            'field' => 'last_name',
+            'label' => 'Last Name',
+            'rules' => 'required',
+            'errors' => array(
+                'required' => '<b style="color:red;">Nama Belakang anda masih kosong.</b>',
+            )
+        ),
+        array(
+            'field' => 'username',
+            'label' => 'Username',
+            'rules' => 'required|min_length[8]|max_length[20]',
+            'errors' => array(
+                'required' => '<b style="color:red;">Username anda masih kosong.</b>',
+                'min_length' => '<b style="color:red;">Username minimal 8 karakter.</b>',
+                'max_length' => '<b style="color:red;">Username maksimal 20 karakter.</b>'
+            )
+        ),
+        array(
+            'field' => 'email',
+            'label' => 'Email',
+            'rules' => 'required|valid_email',
+            'errors' => array(
+                'required' => '<b style="color:red;">Email anda masih kosong.</b>',
+                'valid_email' => '<b style="color:red;">Alamat Email tidak valid.</b>'
+            )
+        ),
     )
+    
 );

@@ -48,6 +48,19 @@ class Pesanan_M extends CI_Model {
         return $query->result_array();
     }
 
+    public function Read_Count_Status_Pesanan($id)
+    {
+        $this->db->select('
+        COUNT(IF(status = "approve", "status", NULL)) AS approve,
+        COUNT(IF(status = "pending", "status", NULL)) AS pending,
+        COUNT(IF(status = "reject", "status", NULL)) AS reject
+        ');
+        $this->db->from('data_pesanan');
+        $this->db->where('id_agen',$id);
+        $query = $this->db->get();
+        return $query->first_row();
+    }
+
     public function Read_Data_Pesanan_Agen($id)
     {
         $this->db->select('*');

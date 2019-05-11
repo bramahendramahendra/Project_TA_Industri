@@ -49,6 +49,7 @@ class Penjualan extends CI_Controller {
         $data['nama_tabel'] = 'Data User Penjualan';
         $data['data_user_admin'] = $this->Admin_M->Read_Data_User_Admin($_SESSION['Logged-Admin']['id']);
         $data['data_penjualan'] = $this->Penjualan_M->Read_Data_Penjualan();
+        $data['data_barang_tipe'] = $this->Charts_M->Read_Select_Chart_Barang_Tipe();
         return $data;
     }
 

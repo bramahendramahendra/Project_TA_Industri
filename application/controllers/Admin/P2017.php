@@ -56,6 +56,7 @@ class P2017 extends CI_Controller {
         $data['nama_tabel'] = 'Data Pesanan 2017';
         $data['data_user_admin'] = $this->Admin_M->Read_Data_User_Admin($_SESSION['Logged-Admin']['id']);
         $data['data_pesanan'] = $this->P2017_M->Read_Data_Pesanan();
+        $data['data_barang_tipe'] = $this->Charts_M->Read_Select_Chart_Barang_Tipe();
         return $data;
     }
 

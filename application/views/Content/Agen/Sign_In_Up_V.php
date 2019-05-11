@@ -45,13 +45,13 @@
                                         
                                             <div class="form-group-inner">
                                                 <label>Username</label>
-                                                <input type="username" class="form-control" placeholder="Enter Username" name="username"/>
-                                                <?php echo form_error('username'); ?>
+                                                <input type="username" class="form-control" placeholder="Enter Username" name="usernameIn"/>
+                                                <?php echo form_error('usernameIn'); ?>
                                             </div>
                                             <div class="form-group-inner">
                                                 <label>Password</label>
-                                                <input type="password" class="form-control" placeholder="Enter password" name="password" />
-                                                <?php echo form_error('password'); ?>
+                                                <input type="password" class="form-control" placeholder="Enter password" name="passwordIn" />
+                                                <?php echo form_error('passwordIn'); ?>
                                             </div>
                                             <div class="login-btn-inner">
                                                 <div class="inline-remember-me">
@@ -256,8 +256,8 @@
             </div>
             <div class="modal-body">
                 <span class="adminpro-icon adminpro-danger-error modal-check-pro information-icon-pro"></span>
-                <h2>Danger!</h2>
-                <p>The Modal plugin is a dialog box/popup window that is displayed on top of the current page</p>
+                <h2>Gagal!</h2>
+                <p>Akun agen yang anda isi, telah terdaftar.</p>
             </div>
             <div class="modal-footer footer-modal-admin">
                 <a data-dismiss="modal" href="#">Close</a>

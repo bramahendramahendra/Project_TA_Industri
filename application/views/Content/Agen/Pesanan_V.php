@@ -1,5 +1,136 @@
 <!-- start body -->
 
+<!-- start profil agen pesanan -->
+<div class="project-details-area mg-b-40">
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+                <div class="project-details-wrap shadow-reset">
+                    <div class="row">
+                        <div class="col-lg-10 col-md-10 col-sm-10 col-xs-10">
+                            <div class="project-details-title">
+                                <h2><span class="profile-details-name-nn">Data Pesanan</span> Agen</h2>
+                            </div>
+                            
+                        </div>
+                        
+                    </div>
+                    <div class="row">
+                        <div class="col-lg-6 col-md-6 col-sm-6 col-xs-12">
+                            <div class="project-details-mg">
+                                <div class="row">
+                                    <div class="col-lg-4 col-md-4 col-sm-4 col-xs-12">
+                                        <div class="project-details-st">
+                                            <span><strong>Nama Agen:</strong></span>
+                                        </div>
+                                    </div>
+                                    <div class="col-lg-8 col-md-8 col-sm-8 col-xs-12">
+                                        <div class="project-details-dt">
+                                            <span><?= $data_user_agen->first_name." ".$data_user_agen->last_name ?></span>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="project-details-mg">
+                                <div class="row">
+                                    <div class="col-lg-4 col-md-4 col-sm-4 col-xs-12">
+                                        <div class="project-details-st">
+                                            <span><strong>NPWP:</strong></span>
+                                        </div>
+                                    </div>
+                                    <div class="col-lg-8 col-md-8 col-sm-8 col-xs-12">
+                                        <div class="project-details-dt">
+                                            <?php if($data_user_agen->npwp == NULL) { ?>
+                                                <span>-</span>
+                                            <?php } else { ?>
+                                                <span><?= $data_user_agen->npwp ?></span>
+                                            <?php } ?>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="project-details-mg">
+                                <div class="row">
+                                    <div class="col-lg-4 col-md-4 col-sm-4 col-xs-12">
+                                        <div class="project-details-st">
+                                            <span><strong>Nomor Telepon:</strong></span>
+                                        </div>
+                                    </div>
+                                    <div class="col-lg-8 col-md-8 col-sm-8 col-xs-12">
+                                        <div class="project-details-dt">
+                                            <?php if($data_user_agen->nomor_telepon == NULL) { ?>
+                                                <span>-</span>
+                                            <?php } else { ?>
+                                                <span><?= $data_user_agen->nomor_telepon ?></span>
+                                            <?php } ?>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-lg-6 col-md-6 col-sm-6 col-xs-12">
+                            <div class="project-details-mg">
+                                <div class="row">
+                                    <div class="col-lg-4 col-md-4 col-sm-4 col-xs-12">
+                                        <div class="project-details-st">
+                                            <span><strong>Status Pesanan:</strong></span>
+                                        </div>
+                                    </div>
+                                    <div class="col-lg-8 col-md-8 col-sm-8 col-xs-12">
+                                        <div class="project-details-dt">
+                                            <div class="btn-group project-list-ad">
+                                                <button class="btn btn-white btn-xs"><?= $count_status_pesanan->approve ?> Active</button>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="project-details-mg">
+                                <div class="row">
+                                    <div class="col-lg-4 col-md-4 col-sm-4 col-xs-12">
+                                        <div class="project-details-st">
+                                            <span><strong></strong></span>
+                                        </div>
+                                    </div>
+                                    <div class="col-lg-8 col-md-8 col-sm-8 col-xs-12">
+                                        <div class="project-details-dt">
+                                            <div class="btn-group project-list-ad-bl">
+                                                <button class="btn btn-white btn-xs"><?= $count_status_pesanan->pending ?> Pending</button>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="project-details-mg">
+                                <div class="row">
+                                    <div class="col-lg-4 col-md-4 col-sm-4 col-xs-12">
+                                        <div class="project-details-st">
+                                            <span><strong></strong></span>
+                                        </div>
+                                    </div>
+                                    <div class="col-lg-8 col-md-8 col-sm-8 col-xs-12">
+                                        <div class="project-details-dt">
+                                            <div class="btn-group project-list-ad-rd">
+                                                <button class="btn btn-white btn-xs"><?= $count_status_pesanan->reject ?> Reject</button>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            
+                           
+                        </div>
+                    </div>
+                    
+                    
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<!-- end profil agen pesanan -->
+
+
 <!-- Data table area Start-->
 <div class="admin-dashone-data-table-area mg-b-40">
     <div class="container">
@@ -27,8 +158,7 @@
                                 <thead>
                                     <tr>
                                         <th data-field="no">No</th>
-                                        <th data-field="nama_agen" >Nama Agen</th>
-                                        <th data-field="npwp" >NPWP</th>
+                                        <th data-field="status" >Status</th>
                                         <th data-field="alamat" >Alamat</th>
                                         <th data-field="tanggal_pemesanan" >Tanggal Pemesanan</th>
                                         <th data-field="tipe_barang" >Tipe Barang</th>
@@ -44,14 +174,27 @@
                                 foreach ($data_pesanan as $value) { ?>
                                     <tr>
                                         <td><?= ++$no; ?></td>
-                                        <td><?= $data_user_agen->first_name." ".$data_user_agen->last_name ?></td>
-                                        <td><?= $data_user_agen->npwp ?></td>
+                                        <td>
+                                            <?php if($value['status'] == 'pending') { ?>
+                                                <div class="btn-group project-list-ad-bl">
+                                                    <button class="btn btn-white btn-xs">Pending</button>
+                                                </div>
+                                            <?php } else if ($value['status'] == "reject"){ ?>
+                                                <div class="btn-group project-list-ad-rd">
+                                                    <button class="btn btn-white btn-xs">Reject</button>
+                                                </div>
+                                            <?php } else { ?>
+                                                <div class="btn-group project-list-ad">
+                                                    <button class="btn btn-white btn-xs">Approve</button>
+                                                </div>
+                                            <?php }  ?>
+                                        </td>
                                         <td><?= $value['alamat']; ?></td>
                                         <td><?= $value['tanggal_pemesanan']; ?></td>
                                         <td><?= $value['tipe_barang']; ?></td>
                                         <td><?= $value['jumlah_barang']; ?></td>
-                                        <td><?= $value['harga_zak']; ?></td>
-                                        <td><?= $value['harga_total']; ?></td>
+                                        <td>Rp. <?= number_format($value['harga_zak'], 0, ".", ".") ?>,-</td>
+                                        <td>Rp. <?= number_format($value['harga_total'], 0, ".", ".") ?>,-</td>
                                         <td><?= $value['nomor_telepon']; ?></td>
                                         <td>
                                             <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#Detail-Pesanan<?php echo  $value['id'] ?>">

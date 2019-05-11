@@ -28,6 +28,8 @@ class Dashboard extends CI_Controller {
         $data['status'] = 'Admin';
         $data['status_singkatan'] = 'ADM';
         $data['data_user_admin'] = $this->Admin_M->Read_Data_User_Admin($_SESSION['Logged-Admin']['id']);
+        $data['data_barang_tipe'] = $this->Charts_M->Read_Select_Chart_Barang_Tipe();
+        
         return $data;
     }
 
@@ -42,5 +44,7 @@ class Dashboard extends CI_Controller {
         $this->Admin_M->Update_Data_Admin($id, $data);
         redirect(site_url('Admin/Dashboard'));
     }
+
+    // public function 
 	
 }

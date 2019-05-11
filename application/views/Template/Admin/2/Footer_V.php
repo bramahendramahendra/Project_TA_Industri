@@ -139,6 +139,50 @@
         </div>
 
         <!-- modal Search Charts -->
+        <div id="Search-Charts-Tipe" class="modal modal-adminpro-general fullwidth-popup-InformationproModal PrimaryModal-bgcolor fade" role="dialog">
+            <div class="modal-dialog">
+                <div class="modal-content">
+                    <div class="modal-close-area modal-close-df">
+                        <a class="close" data-dismiss="modal" href="#"><i class="fa fa-close"></i></a>
+                    </div>
+                    <div class="modal-body">
+                        <div class="sparkline12-hd">
+                            <div class="main-sparkline12-hd">
+                                <h1>Cari Charts</h1>
+                            </div>
+                        </div>
+                        <div class="sparkline12-graph">
+                            <div class="basic-login-form-ad">
+                                <div class="row">
+                                    <div class="col-lg-12">
+                                        <div class="all-form-element-inner">
+                                            <form action="<?= site_url() ?>Admin/Charts/Search_Tipe" method="post">
+                                                <!-- Tipe -->
+                                                <div class="chosen-select-single mg-b-20">
+                                                    <label>Tipe Barang</label>
+                                                    <select data-placeholder="Choose a Country..." class="chosen-select" tabindex="-1" name="tipe_barang">
+                                                        <option value="">Select</option>
+                                                        <?php foreach ($data_barang_tipe as $value) { ?>
+                                                            <option value="<?= $value['tipe_barang']; ?>"><?= $value['tipe_barang']; ?></option>
+                                                        <?php } ?>
+                                                    </select>
+                                                </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>  
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" data-dismiss="modal" class="btn btn-custon-four btn-danger btn-lg">Close</button>
+                        <button type="Submit" class="btn btn-custon-four btn-success btn-lg">Simpan</button>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- modal Search Charts -->
         <div id="Search-Charts" class="modal modal-adminpro-general fullwidth-popup-InformationproModal PrimaryModal-bgcolor fade" role="dialog">
             <div class="modal-dialog">
                 <div class="modal-content">
@@ -404,6 +448,17 @@
 
         <!-- modal JS
             ============================================ -->
+        <script>
+            var Create = "<?php echo $_SESSION['create'] ?>";
+            if(Create == 'FailedInput') {
+                $('#Create-Agen').modal('show');
+            } else if(Create == 'Success') {
+                $('#SuccessInput').modal('show');
+            } else if(Create == 'FailedDuplikat') {
+                $('#FailedDuplikat').modal('show');
+            }
+        </script>
+        
         <script>
             var Delete = "<?php echo $_SESSION['Delete-Agen'] ?>";
             if(Delete) {

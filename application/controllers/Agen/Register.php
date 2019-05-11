@@ -3,6 +3,15 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 
 class Register extends CI_Controller {
 
+    // public function SignUp() 
+    // {
+    //     $data = $this->Read_Register();
+    //     $this->load->view('Template/Agen/1/Header_V');
+    //     $this->load->view('Content/Agen/Sign_In_Up_V');
+    //     $this->load->view('Template/Agen/1/Footer_V');
+    // }
+
+   
 	public function index()
 	{
         // form validation
@@ -10,8 +19,9 @@ class Register extends CI_Controller {
             // load failed template
             $this->session->set_flashdata('SignUp','FailedInput');
             // memanggil view register
+            $data = $this->Read_Register();
             $this->load->view('Template/Agen/1/Header_V');
-            $this->load->view('Content/Agen/Sign_In_Up_V');
+            $this->load->view('Content/Agen/Sign_In_Up_V',$data);
             $this->load->view('Template/Agen/1/Footer_V');
         } else {
             // load success template
@@ -26,8 +36,9 @@ class Register extends CI_Controller {
                 $this->session->set_flashdata('SignUp','FailedDuplikat');
 
                 // memanggil view register
+                $data = $this->Read_Register();
                 $this->load->view('Template/Agen/1/Header_V');
-                $this->load->view('Content/Agen/Sign_In_Up_V');
+                $this->load->view('Content/Agen/Sign_In_Up_V',$data);
                 $this->load->view('Template/Agen/1/Footer_V');
             } else { // jika validasi dalam kondisi success
                 // mengeset jam timezone
@@ -54,5 +65,11 @@ class Register extends CI_Controller {
         }
     }
 
-    
+    public function Read_Register() {
+        $data = array();
+        $data['title'] = 'PT Zetka Niagatama';
+        $data['title_form'] = 'Login Agen';
+        return $data;
+    }
+
 }

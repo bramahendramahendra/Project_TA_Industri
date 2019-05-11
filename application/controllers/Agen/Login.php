@@ -45,8 +45,8 @@ class Login extends CI_Controller {
         else {
             // load success template
             $data = array();
-            $data['username']= $this->input->post('username');
-            $data['password'] = md5($this->input->post('password'));
+            $data['username']= $this->input->post('usernameIn');
+            $data['password'] = md5($this->input->post('passwordIn'));
         
             // mencari user admin
             $user_agen = $this->Login_M->Cari_User_Agen($data);
