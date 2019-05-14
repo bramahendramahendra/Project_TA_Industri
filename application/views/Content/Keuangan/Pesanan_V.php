@@ -50,8 +50,8 @@
                                         <td><?= $value['tanggal_pemesanan']; ?></td>
                                         <td><?= $value['tipe_barang']; ?></td>
                                         <td><?= $value['jumlah_barang']; ?></td>
-                                        <td><?= $value['harga_zak']; ?></td>
-                                        <td><?= $value['harga_total']; ?></td>
+                                        <td>Rp. <?= number_format($value['harga_zak'], 0, ".", ".") ?>,-</td>
+                                        <td>Rp. <?= number_format($value['harga_total'], 0, ".", ".") ?>,-</td>
                                         <td><?= $value['nomor_telepon']; ?></td>
                                         <td >
                                         <?php if($value['status'] == "pending") { ?>

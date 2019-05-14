@@ -18,7 +18,8 @@
                                         <h2><?= $data_user_admin->first_name.' '.$data_user_admin->last_name; ?></h2>
                                         <p class="profile-founder">Status :  <strong><?= $status;?></strong>
                                         </p>
-                                        <p class="profile-des">It is a long established fact that a reader will be distracted of by the readable content of a page when looking at its layout.The point of using Lorem Ipsum.</p>
+                                        <p class="profile-founder">Alamat :  <strong><?= $status;?></strong>
+                                        </p>        
                                     </div>
                                 </div>
                             </div>
@@ -77,8 +78,12 @@
             <div class="col-lg-12">
                 <div class="user-profile-about shadow-reset">
                     <h2>About <?= $title;?></h2>
-                    <p>It is a long established fact that a reader will be distracted of by the readable content of a page when looking at its layout.The point of using Lorem Ipsum.</p>
-                    <p>If you are going to use a passage of Lorem Ipsum.</p>
+                    <p>PT. Zetka Niagatama Ltd adalah bisnis yang bergerak di bidang Distributor Semen, PT Semen Padang.</p> 
+                    <p>Bisnis ini terletak di Jl. Rimbo Datar No.16-18.Padang-25231. </p>
+                    <p>Anda juga dapat menghubungi bisnis ini melalui telepon di nomor </p>
+                    <p>Telp.  0751 - 71323-71324 Fax : 0751 - 72578</p>
+                    <p>Email : zetka.niagatama@yahoo.co.id</p>
+                    
                     
                 </div>
 
