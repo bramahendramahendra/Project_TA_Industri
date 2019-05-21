@@ -48,6 +48,18 @@ class Pesanan_M extends CI_Model {
         return $query->result_array();
     }
 
+    public function Read_Notifikasi_Penjualan_Agen($id)
+    {
+        $this->db->select('notifikasi_status_penjualan.id AS id, data_user_agen.first_name AS nama, data_pesanan.tanggal_pemesanan AS tanggal, data_pesanan.status AS status');
+        $this->db->from('notifikasi_status_penjualan');
+        $this->db->join('data_pesanan', 'notifikasi_status_penjualan.id_pesanan = data_pesanan.id');
+        $this->db->join('data_user_agen', 'data_user_agen.id_agen = data_pesanan.id_agen');
+        $this->db->where('notifikasi_status_penjualan.status',1);
+        $this->db->where('data_pesanan.id_agen',$id);
+        $query = $this->db->get();
+        return $query->result_array();
+    }
+
     public function Read_Count_Status_Pesanan($id)
     {
         $this->db->select('
@@ -86,6 +98,13 @@ class Pesanan_M extends CI_Model {
 	    return;
     }
     
+    public function Update_Status_Agen($id) 
+    {
+        $this->db->where('id', $id);
+		$this->db->update('notifikasi_status_penjualan', array('status' => 2));
+	    return;
+    }
+
     public function Delete_Data_Pesanan($id)
     {
         $this->db->delete('data_pesanan', array('id' => $id));

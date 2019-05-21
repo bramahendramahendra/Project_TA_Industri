@@ -440,8 +440,8 @@ ul.message-menu li .message-content, ul.notification-menu li .notification-conte
 ul.message-menu li .message-content .message-date, ul.notification-menu li .notification-content .notification-date{
 	position:absolute;
 	top:0px;
-	right:0px;
-	font-size:13px;
+	right:-100px;
+	font-size: 15px;
 	font-style: italic;
 }
 ul.message-menu li .message-content h2, ul.notification-menu li .notification-content h2{

@@ -97,7 +97,7 @@
                                                 
                                             </ul>
                                             <div class="notification-view">
-                                                <a href="<?= site_url()?>Penjualan/Status_Pesanan">View All Notification</a>
+                                                <a href="<?= site_url()?>Penjualan/Status_Pesanan">Lihat Semua Notifikasi</a>
                                             </div>
                                         <?php } ?>
                                         </div>

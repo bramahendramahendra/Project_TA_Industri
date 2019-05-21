@@ -30,6 +30,7 @@ class Dashboard extends CI_Controller {
         $data['status'] = 'Agen';
         $data['status_singkatan'] = 'AGN';
         $data['data_user_agen'] = $this->Agen_M->Read_Data_User_Agen($_SESSION['Logged-Agen']['id']);
+        $data['notifikasi_pesanan'] = $this->Pesanan_M->Read_Notifikasi_Penjualan_Agen($_SESSION['Logged-Agen']['id']);
         return $data;
     }
 

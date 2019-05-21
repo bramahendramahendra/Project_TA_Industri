@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: May 16, 2019 at 06:55 AM
+-- Generation Time: May 21, 2019 at 04:09 PM
 -- Server version: 10.1.26-MariaDB
 -- PHP Version: 7.1.8
 
@@ -19,7 +19,7 @@ SET time_zone = "+00:00";
 /*!40101 SET NAMES utf8mb4 */;
 
 --
--- Database: `db`
+-- Database: `bayar_project_industri`
 --
 
 -- --------------------------------------------------------
@@ -78,7 +78,7 @@ CREATE TABLE `data_pesanan` (
 
 INSERT INTO `data_pesanan` (`id`, `id_agen`, `alamat`, `tanggal_pemesanan`, `tipe_barang`, `jumlah_barang`, `harga_zak`, `harga_total`, `nomor_telepon`, `status`) VALUES
 (5, 4, 'as', '2019-05-27', '1', 2, 2, 2, '2', 'approve'),
-(6, 4, 'asd', '2019-05-05', '2', 1, 1, 3, '1', 'pending'),
+(6, 4, 'asd', '2019-05-05', '2', 1, 1, 3, '1', 'approve'),
 (7, 3, '1', '2019-05-06', '2', 3, 5, 15, '2', 'pending'),
 (8, 3, 'a', '2019-05-06', '2', 2, 3, 6, '1', 'pending'),
 (9, 3, 'asd', '2019-05-20', '1', 2, 2, 4, '3', 'pending'),
@@ -156,7 +156,7 @@ CREATE TABLE `notifikasi_status_penjualan` (
 
 INSERT INTO `notifikasi_status_penjualan` (`id`, `id_pesanan`, `status`) VALUES
 (2, 5, 1),
-(3, 6, 0),
+(3, 6, 2),
 (4, 7, 0),
 (5, 8, 0),
 (6, 9, 0),
@@ -219,9 +219,9 @@ CREATE TABLE `user_agen` (
 --
 
 INSERT INTO `user_agen` (`id`, `username`, `email`, `password`, `last_login`, `create_date`) VALUES
-(3, 'testing1', 'testing1@gmail.com', '25f9e794323b453885f5181f1b624d0b', '2019-05-10 11:39:44', '2019-05-01 00:24:06'),
-(4, 'testing2', 'testing2@gmail.com', '25f9e794323b453885f5181f1b624d0b', '2019-05-01 23:08:09', '2019-05-01 14:56:13'),
-(5, 'testing3', 'testing3@gmail.com', '25f9e794323b453885f5181f1b624d0b', '2019-05-01 14:59:38', '2019-05-01 14:59:29'),
+(3, 'testing1', 'testing1@gmail.com', '25f9e794323b453885f5181f1b624d0b', '2019-05-21 20:45:50', '2019-05-01 00:24:06'),
+(4, 'testing2', 'testing2@gmail.com', '25f9e794323b453885f5181f1b624d0b', '2019-05-21 20:49:49', '2019-05-01 14:56:13'),
+(5, 'testing3', 'testing3@gmail.com', '25f9e794323b453885f5181f1b624d0b', '2019-05-21 20:37:18', '2019-05-01 14:59:29'),
 (6, 'asdasd1', NULL, '5f4dcc3b5aa765d61d8327deb882cf99', NULL, '2019-05-06 00:43:07'),
 (7, 'testing4', 'testing4@gmail.com', '5f4dcc3b5aa765d61d8327deb882cf99', NULL, '2019-05-11 22:46:52');
 
@@ -267,7 +267,7 @@ CREATE TABLE `user_penjualan` (
 --
 
 INSERT INTO `user_penjualan` (`id`, `username`, `email`, `password`, `last_login`, `create_date`) VALUES
-(2, 'testing0', 'testing0@gmail.com', '5f4dcc3b5aa765d61d8327deb882cf99', '2019-05-14 15:32:38', '2019-05-02 17:33:21'),
+(2, 'testing0', 'testing0@gmail.com', '5f4dcc3b5aa765d61d8327deb882cf99', '2019-05-19 19:03:14', '2019-05-02 17:33:21'),
 (3, 'testing1', 'testing1@gmail.com', '5f4dcc3b5aa765d61d8327deb882cf99', NULL, '2019-05-03 02:39:03');
 
 --
