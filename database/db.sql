@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: May 21, 2019 at 04:09 PM
+-- Generation Time: Jun 03, 2019 at 03:57 AM
 -- Server version: 10.1.26-MariaDB
 -- PHP Version: 7.1.8
 
@@ -21,6 +21,18 @@ SET time_zone = "+00:00";
 --
 -- Database: `bayar_project_industri`
 --
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `chart_agen`
+--
+
+CREATE TABLE `chart_agen` (
+  `id` int(10) NOT NULL,
+  `data_x` varchar(50) DEFAULT NULL,
+  `data_y` int(50) DEFAULT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 -- --------------------------------------------------------
 
@@ -85,7 +97,8 @@ INSERT INTO `data_pesanan` (`id`, `id_agen`, `alamat`, `tanggal_pemesanan`, `tip
 (10, 3, 'asd', '2019-05-20', '1', 2, 6, 12, '3', 'pending'),
 (11, 3, '1', '2019-05-15', '1', 3, 3, 9, '4', 'pending'),
 (19, 4, '3', '2019-05-21', '3', 3, 3, 9, '3', 'pending'),
-(20, 6, '1', '2019-05-14', '1', 1, 2, 2, '3', 'pending');
+(20, 6, '1', '2019-05-14', '1', 1, 2, 2, '3', 'pending'),
+(21, 5, 'ad', '2019-05-15', '1', 1, 2, 2, '2', 'pending');
 
 -- --------------------------------------------------------
 
@@ -170,7 +183,8 @@ INSERT INTO `notifikasi_status_penjualan` (`id`, `id_pesanan`, `status`) VALUES
 (14, 17, 0),
 (15, 18, 0),
 (16, 19, 0),
-(17, 20, 0);
+(17, 20, 0),
+(18, 21, 0);
 
 -- --------------------------------------------------------
 
@@ -196,7 +210,7 @@ INSERT INTO `user_admin` (`id`, `username`, `email`, `password`, `last_login`, `
 (2, 'testing1', 'testing1@gmail.com', '25d55ad283aa400', NULL, '2019-04-26 00:00:00'),
 (3, 'testing2', 'testing2@gmail.com', '25d55ad283aa400', NULL, '2019-04-26 00:00:00'),
 (4, 'testing3', 'testing3@gmail.com', '25d55ad283aa400', NULL, '2019-04-26 11:54:02'),
-(5, 'testing4', 'testing4@gmail.com', '25f9e794323b453885f5181f1b624d0b', '2019-05-14 14:19:13', '2019-04-26 18:02:24'),
+(5, 'testing4', 'testing4@gmail.com', '25f9e794323b453885f5181f1b624d0b', '2019-06-03 07:33:24', '2019-04-26 18:02:24'),
 (6, 'testing5', 'testing5@gmail.com', '25f9e794323b453885f5181f1b624d0b', NULL, '2019-05-03 01:56:49');
 
 -- --------------------------------------------------------
@@ -219,9 +233,9 @@ CREATE TABLE `user_agen` (
 --
 
 INSERT INTO `user_agen` (`id`, `username`, `email`, `password`, `last_login`, `create_date`) VALUES
-(3, 'testing1', 'testing1@gmail.com', '25f9e794323b453885f5181f1b624d0b', '2019-05-21 20:45:50', '2019-05-01 00:24:06'),
-(4, 'testing2', 'testing2@gmail.com', '25f9e794323b453885f5181f1b624d0b', '2019-05-21 20:49:49', '2019-05-01 14:56:13'),
-(5, 'testing3', 'testing3@gmail.com', '25f9e794323b453885f5181f1b624d0b', '2019-05-21 20:37:18', '2019-05-01 14:59:29'),
+(3, 'testing1', 'testing1@gmail.com', '25f9e794323b453885f5181f1b624d0b', '2019-06-03 07:29:35', '2019-05-01 00:24:06'),
+(4, 'testing2', 'testing2@gmail.com', '25f9e794323b453885f5181f1b624d0b', '2019-06-02 23:37:04', '2019-05-01 14:56:13'),
+(5, 'testing3', 'testing3@gmail.com', '25f9e794323b453885f5181f1b624d0b', '2019-06-02 14:07:01', '2019-05-01 14:59:29'),
 (6, 'asdasd1', NULL, '5f4dcc3b5aa765d61d8327deb882cf99', NULL, '2019-05-06 00:43:07'),
 (7, 'testing4', 'testing4@gmail.com', '5f4dcc3b5aa765d61d8327deb882cf99', NULL, '2019-05-11 22:46:52');
 
@@ -245,7 +259,7 @@ CREATE TABLE `user_keuangan` (
 --
 
 INSERT INTO `user_keuangan` (`id`, `username`, `email`, `password`, `last_login`, `create_date`) VALUES
-(3, 'testing0', 'testing0@gmail.com', '5f4dcc3b5aa765d61d8327deb882cf99', '2019-05-06 07:10:57', '2019-05-02 13:53:19');
+(3, 'testing0', 'testing0@gmail.com', '5f4dcc3b5aa765d61d8327deb882cf99', '2019-06-03 08:54:56', '2019-05-02 13:53:19');
 
 -- --------------------------------------------------------
 
@@ -267,12 +281,18 @@ CREATE TABLE `user_penjualan` (
 --
 
 INSERT INTO `user_penjualan` (`id`, `username`, `email`, `password`, `last_login`, `create_date`) VALUES
-(2, 'testing0', 'testing0@gmail.com', '5f4dcc3b5aa765d61d8327deb882cf99', '2019-05-19 19:03:14', '2019-05-02 17:33:21'),
+(2, 'testing0', 'testing0@gmail.com', '5f4dcc3b5aa765d61d8327deb882cf99', '2019-06-03 08:53:08', '2019-05-02 17:33:21'),
 (3, 'testing1', 'testing1@gmail.com', '5f4dcc3b5aa765d61d8327deb882cf99', NULL, '2019-05-03 02:39:03');
 
 --
 -- Indexes for dumped tables
 --
+
+--
+-- Indexes for table `chart_agen`
+--
+ALTER TABLE `chart_agen`
+  ADD PRIMARY KEY (`id`);
 
 --
 -- Indexes for table `data_p2017`
@@ -333,6 +353,11 @@ ALTER TABLE `user_penjualan`
 --
 
 --
+-- AUTO_INCREMENT for table `chart_agen`
+--
+ALTER TABLE `chart_agen`
+  MODIFY `id` int(10) NOT NULL AUTO_INCREMENT;
+--
 -- AUTO_INCREMENT for table `data_p2017`
 --
 ALTER TABLE `data_p2017`
@@ -341,7 +366,7 @@ ALTER TABLE `data_p2017`
 -- AUTO_INCREMENT for table `data_pesanan`
 --
 ALTER TABLE `data_pesanan`
-  MODIFY `id` int(5) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=21;
+  MODIFY `id` int(5) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=22;
 --
 -- AUTO_INCREMENT for table `data_user_admin`
 --
@@ -356,7 +381,7 @@ ALTER TABLE `data_user_agen`
 -- AUTO_INCREMENT for table `notifikasi_status_penjualan`
 --
 ALTER TABLE `notifikasi_status_penjualan`
-  MODIFY `id` int(5) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=18;
+  MODIFY `id` int(5) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=19;
 --
 -- AUTO_INCREMENT for table `user_admin`
 --

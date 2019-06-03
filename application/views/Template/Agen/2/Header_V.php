@@ -38,21 +38,30 @@
         <!-- normalize CSS
             ============================================ -->
         <link rel="stylesheet" href="<?= base_url(); ?>assets/dashboard_agen/css/normalize.css">
+        <!-- modals CSS
+            ============================================ -->
+            <link rel="stylesheet" href="<?= base_url(); ?>assets/dashboard_agen/css/modals.css">
         <!-- buttons CSS
             ============================================ -->
         <link rel="stylesheet" href="<?= base_url(); ?>assets/dashboard_agen/css/buttons.css">
+        <!-- charts CSS
+		    ============================================ -->
+            <link rel="stylesheet" href="<?= base_url(); ?>assets/dashboard_agen/css/charts.css">
         <!-- charts C3 CSS
             ============================================ -->
         <link rel="stylesheet" href="<?= base_url(); ?>assets/dashboard_agen/css/c3.min.css">
+        <!-- chosen CSS
+            ============================================ -->
+            <link rel="stylesheet" href="<?= base_url(); ?>assets/dashboard_agen/css/chosen/bootstrap-chosen.css">
+        <!-- select2 CSS
+		============================================ -->
+        <link rel="stylesheet" href="<?= base_url(); ?>assets/dashboard_agen/css/select2/select2.min.css">
         <!-- datapicker CSS
             ============================================ -->
         <link rel="stylesheet" href="<?= base_url(); ?>assets/dashboard_agen/css/datapicker/datepicker3.css">
         <!-- forms CSS
             ============================================ -->
-        <link rel="stylesheet" href="<?= base_url(); ?>assets/dashboard_agen/css/form/all-type-forms.css">
-        <!-- modals CSS
-            ============================================ -->
-        <link rel="stylesheet" href="<?= base_url(); ?>assets/dashboard_agen/css/modals.css">
+        <link rel="stylesheet" href="<?= base_url(); ?>assets/dashboard_agen/css/form/all-type-forms.css">  
         <!-- style CSS
             ============================================ -->
         <link rel="stylesheet" href="<?= base_url(); ?>assets/dashboard_agen/css/style.css">
@@ -159,7 +168,21 @@
                             </li>
                             <li class="active"> <a href="<?= site_url() ?>Agen/Pesanan">Pesanan</a>
                             </li>
+                            <li><a data-toggle="tab" href="#Reports">Reports</a>
+                            </li> 
                         </ul>
+                        <div class="tab-content custom-menu-content">
+                            <div id="Reports" class="tab-pane tab-custon-menu-bg animated flipInX">
+                                <ul class="main-menu-dropdown">
+                                    <li><a href="" data-toggle="modal" data-target="#Search-Charts-Tipe">Reports Tipe</a>
+                                    </li>
+                                    <li><a href="" data-toggle="modal" data-target="#Search-Charts">Reports Bulan</a>
+                                    </li>
+                                    <li><a href="<?= site_url() ?>Agen/Charts" >Reports Tahun</a>
+                                    </li>
+                                </ul>
+                            </div>
+                        </div>
                         
                     </div>
                 </div>

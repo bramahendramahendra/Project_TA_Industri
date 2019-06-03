@@ -61,6 +61,7 @@ class Pesanan extends CI_Controller {
         $data['data_pesanan'] = $this->Pesanan_M->Read_Data_Pesanan_Agen($_SESSION['Logged-Agen']['id']);
         $data['count_status_pesanan'] = $this->Pesanan_M->Read_Count_Status_Pesanan($_SESSION['Logged-Agen']['id']);
         $data['notifikasi_pesanan'] = $this->Pesanan_M->Read_Notifikasi_Penjualan_Agen($_SESSION['Logged-Agen']['id']);
+        // $data['data_barang_tipe'] = $this->Charts_M->Read_Select_Chart_Barang_Tipe_Agen($_SESSION['Logged-Agen']['id']);
         return $data;
     }
 

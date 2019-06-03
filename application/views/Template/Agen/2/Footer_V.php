@@ -117,6 +117,162 @@
             </div>
         </div>
 
+        <!-- modal Search Charts Tipe -->
+        <div id="Search-Charts-Tipe" class="modal modal-adminpro-general default-popup-PrimaryModal fade" role="dialog">
+            <div class="modal-dialog">
+                <div class="modal-content">
+                    <div class="modal-close-area modal-close-df">
+                        <a class="close" data-dismiss="modal" href="#"><i class="fa fa-close"></i></a>
+                    </div>
+                    <div class="modal-body">
+                        <div class="sparkline12-hd">
+                            <div class="main-sparkline12-hd">
+                                <h1>Cari Reports Tipe</h1>
+                            </div>
+                        </div>
+                        <div class="sparkline12-graph">
+                            <div class="basic-login-form-ad">
+                                <div class="row">
+                                    <div class="col-lg-12">
+                                        <div class="all-form-element-inner">
+                                            <form action="<?= site_url() ?>Agen/Charts/Search_Tipe" method="post">
+                                                <!-- Tahun -->
+                                                <div class="form-group-inner">
+                                                    <div class="row">
+                                                        <div class="col-lg-12">
+                                                            <label>Tahun (ex: 2018)</label>
+                                                            <div class="form-select-list">
+                                                                <input type="text" class="form-control input-sm" placeholder="Tahun" name="tahun">
+                                                            
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>  
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" data-dismiss="modal" class="btn btn-custon-four btn-danger btn-lg">Close</button>
+                        <button type="Submit" class="btn btn-custon-four btn-success btn-lg">Simpan</button>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- modal Search Charts -->
+        <div id="Search-Charts" class="modal modal-adminpro-general default-popup-PrimaryModal fade" role="dialog">
+            <div class="modal-dialog">
+                <div class="modal-content">
+                    <div class="modal-close-area modal-close-df">
+                        <a class="close" data-dismiss="modal" href="#"><i class="fa fa-close"></i></a>
+                    </div>
+                    <div class="modal-body">
+                        <div class="sparkline12-hd">
+                            <div class="main-sparkline12-hd">
+                                <h1>Cari Charts</h1>
+                            </div>
+                        </div>
+                        <div class="sparkline12-graph">
+                            <div class="basic-login-form-ad">
+                                <div class="row">
+                                    <div class="col-lg-12">
+                                        <div class="all-form-element-inner">
+                                            <form action="<?= site_url() ?>Agen/Charts/Search_Bulanan" method="post">
+                                                <!-- Tahun -->
+                                                <div class="form-group-inner">
+                                                    <div class="row">
+                                                        <div class="col-lg-12">
+                                                            <label>Tahun (ex: 2018)</label>
+                                                            <div class="form-select-list">
+                                                                <input type="text" class="form-control input-sm" placeholder="Tahun" name="tahun">
+                                                            
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>  
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" data-dismiss="modal" class="btn btn-custon-four btn-danger btn-lg">Close</button>
+                        <button type="Submit" class="btn btn-custon-four btn-success btn-lg">Simpan</button>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- modal Search Charts Tahunan -->
+        <div id="Search-Charts-Tahunan" class="modal modal-adminpro-general default-popup-PrimaryModal fade" role="dialog">
+            <div class="modal-dialog">
+                <div class="modal-content">
+                    <div class="modal-close-area modal-close-df">
+                        <a class="close" data-dismiss="modal" href="#"><i class="fa fa-close"></i></a>
+                    </div>
+                    <div class="modal-body">
+                        <div class="sparkline12-hd">
+                            <div class="main-sparkline12-hd">
+                                <h1>Cari Charts Tahunan</h1>
+                            </div>
+                        </div>
+                        <div class="sparkline12-graph">
+                            <div class="basic-login-form-ad">
+                                <div class="row">
+                                    <div class="col-lg-12">
+                                        <div class="all-form-element-inner">
+                                            <form action="<?= site_url() ?>Agen/Charts" method="post">
+                                                <!-- Label -->
+                                                <div class="form-group-inner">
+                                                    <div class="row">
+                                                        <div class="col-lg-12">
+                                                            <label>Tahun (ex: 2018)</label>
+                                                            <br>
+                                                            <label>Ex: Start = 2018 ; End = 2020</label>
+                                                        </div>
+                                                    </div>
+                                                </div>
+
+                                                <!-- Tahun -->
+                                                <div class="form-group-inner">
+                                                    <div class="row">
+                                                        <div class="col-lg-12">
+                                                            
+                                                            <label>Start</label>
+                                                            <div class="form-select-list">
+                                                                <input type="text" class="form-control input-sm" placeholder="Tahun" name="tahun">
+                                                            
+                                                            </div>
+                                                            <label>End</label>
+                                                            <div class="form-select-list">
+                                                                <input type="text" class="form-control input-sm" placeholder="Tahun" name="tahun">
+                                                            
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                           
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>  
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" data-dismiss="modal" class="btn btn-custon-four btn-danger btn-lg">Close</button>
+                        <button type="Submit" class="btn btn-custon-four btn-success btn-lg">Simpan</button>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+
         
 
         <!-- Modal End -->
@@ -140,6 +296,17 @@
         <!-- scrollUp JS
             ============================================ -->
         <script src="<?= base_url(); ?>assets/dashboard_agen/js/jquery.scrollUp.min.js"></script>
+        <!-- modal JS
+            ============================================ -->
+        <script src="<?= base_url(); ?>assets/dashboard_agen/js/modal-active.js"></script>
+        <!-- icheck JS
+            ============================================ -->
+        <script src="<?= base_url(); ?>assets/dashboard_agen/js/icheck/icheck.min.js"></script>
+        <script src="<?= base_url(); ?>assets/dashboard_agen/js/icheck/icheck-active.js"></script>
+        <!-- Charts JS
+		    ============================================ -->
+        <script src="<?= base_url(); ?>assets/dashboard_agen/js/charts/Chart.js"></script>
+        <script src="<?= base_url(); ?>assets/dashboard_agen/js/charts/line-chart.js"></script>
         <!-- counterup JS
             ============================================ -->
         <script src="<?= base_url(); ?>assets/dashboard_agen/js/counterup/jquery.counterup.min.js"></script>
@@ -180,17 +347,22 @@
         <script src="<?= base_url(); ?>assets/dashboard_agen/js/data-table/bootstrap-table-resizable.js"></script>
         <script src="<?= base_url(); ?>assets/dashboard_agen/js/data-table/colResizable-1.5.source.js"></script>
         <script src="<?= base_url(); ?>assets/dashboard_agen/js/data-table/bootstrap-table-export.js"></script>
-        <!-- modal JS
-            ============================================ -->
-        <script src="<?= base_url(); ?>assets/dashboard_agen/js/modal-active.js"></script>
+        <!-- input-mask JS
+		    ============================================ -->
+        <script src="<?= base_url(); ?>assets/dashboard_agen/js/input-mask/jasny-bootstrap.min.js"></script>
         <!-- datapicker JS
             ============================================ -->
         <script src="<?= base_url(); ?>assets/dashboard_agen/js/datapicker/bootstrap-datepicker.js"></script>
         <script src="<?= base_url(); ?>assets/dashboard_agen/js/datapicker/datepicker-active.js"></script>
-        <!-- icheck JS
+        <!-- chosen JS
             ============================================ -->
-        <script src="<?= base_url(); ?>assets/dashboard_agen/js/icheck/icheck.min.js"></script>
-        <script src="<?= base_url(); ?>assets/dashboard_agen/js/icheck/icheck-active.js"></script>
+        <script src="<?= base_url(); ?>assets/dashboard_agen/js/chosen/chosen.jquery.js"></script>
+        <script src="<?= base_url(); ?>assets/dashboard_agen/js/chosen/chosen-active.js"></script>
+        <!-- select2 JS
+            ============================================ -->
+        <script src="<?= base_url(); ?>assets/dashboard_agen/js/select2/select2.full.min.js"></script>
+        <script src="<?= base_url(); ?>assets/dashboard_agen/js/select2/select2-active.js"></script>
+        
         <!-- main JS
             ============================================ -->
         <script src="<?= base_url(); ?>assets/dashboard_agen/js/main.js"></script>
@@ -201,6 +373,115 @@
             if(Delete) {
                 $('#Delete-Pesanan').modal('show');
             }
+        </script>
+
+        <script>
+            var ctx = document.getElementById("barchart1");
+            var barchart1 = new Chart(ctx, {
+                type: 'bar',
+                data: {
+                    labels: [<?php foreach ($data_charts as $value) { echo '"' . $value['nama'] . '",';}?>],
+                    datasets: [{
+                        label: 'Jumlah Barang',
+                        data: [<?php foreach ($data_charts as $value) { echo '"' . $value['jumlah'] . '",';}?>],
+                        backgroundColor: [
+                            'rgba(255, 99, 132, 0.2)',
+                            'rgba(54, 162, 235, 0.2)',
+                            'rgba(255, 206, 86, 0.2)',
+                            'rgba(75, 192, 192, 0.2)',
+                            'rgba(153, 102, 255, 0.2)',
+                            'rgba(255, 159, 64, 0.2)',
+                            'rgba(255, 99, 132, 0.2)',
+                            'rgba(54, 162, 235, 0.2)',
+                            'rgba(255, 206, 86, 0.2)',
+                            'rgba(75, 192, 192, 0.2)',
+                            'rgba(153, 102, 255, 0.2)',
+                            'rgba(255, 159, 64, 0.2)',
+                            'rgba(255, 99, 132, 0.2)',
+                            'rgba(54, 162, 235, 0.2)',
+                            'rgba(255, 206, 86, 0.2)',
+                            'rgba(75, 192, 192, 0.2)',
+                            'rgba(153, 102, 255, 0.2)',
+                            'rgba(255, 159, 64, 0.2)',
+                            'rgba(255, 99, 132, 0.2)',
+                            'rgba(54, 162, 235, 0.2)',
+                            'rgba(255, 206, 86, 0.2)',
+                            'rgba(75, 192, 192, 0.2)',
+                            'rgba(153, 102, 255, 0.2)',
+                            'rgba(255, 159, 64, 0.2)',
+                            'rgba(255, 99, 132, 0.2)',
+                            'rgba(54, 162, 235, 0.2)',
+                            'rgba(255, 206, 86, 0.2)',
+                            'rgba(75, 192, 192, 0.2)',
+                            'rgba(153, 102, 255, 0.2)',
+                            'rgba(255, 159, 64, 0.2)',
+                            'rgba(255, 99, 132, 0.2)',
+                            'rgba(54, 162, 235, 0.2)',
+                            'rgba(255, 206, 86, 0.2)',
+                            'rgba(75, 192, 192, 0.2)',
+                            'rgba(153, 102, 255, 0.2)',
+                            'rgba(255, 159, 64, 0.2)',
+                        ],
+                        borderColor: [
+                            'rgba(255,99,132,1)',
+                            'rgba(54, 162, 235, 1)',
+                            'rgba(255, 206, 86, 1)',
+                            'rgba(75, 192, 192, 1)',
+                            'rgba(153, 102, 255, 1)',
+                            'rgba(255, 159, 64, 1)',
+                            'rgba(255,99,132,1)',
+                            'rgba(54, 162, 235, 1)',
+                            'rgba(255, 206, 86, 1)',
+                            'rgba(75, 192, 192, 1)',
+                            'rgba(153, 102, 255, 1)',
+                            'rgba(255, 159, 64, 1)',
+                            'rgba(255,99,132,1)',
+                            'rgba(54, 162, 235, 1)',
+                            'rgba(255, 206, 86, 1)',
+                            'rgba(75, 192, 192, 1)',
+                            'rgba(153, 102, 255, 1)',
+                            'rgba(255, 159, 64, 1)',
+                            'rgba(255,99,132,1)',
+                            'rgba(54, 162, 235, 1)',
+                            'rgba(255, 206, 86, 1)',
+                            'rgba(75, 192, 192, 1)',
+                            'rgba(153, 102, 255, 1)',
+                            'rgba(255, 159, 64, 1)',
+                            'rgba(255,99,132,1)',
+                            'rgba(54, 162, 235, 1)',
+                            'rgba(255, 206, 86, 1)',
+                            'rgba(75, 192, 192, 1)',
+                            'rgba(153, 102, 255, 1)',
+                            'rgba(255, 159, 64, 1)',
+                            'rgba(255,99,132,1)',
+                            'rgba(54, 162, 235, 1)',
+                            'rgba(255, 206, 86, 1)',
+                            'rgba(75, 192, 192, 1)',
+                            'rgba(153, 102, 255, 1)',
+                            'rgba(255, 159, 64, 1)',
+                        ],
+                        borderWidth: 1
+                    }]
+                },
+                options: {
+                    scales: {
+                        xAxes: [{
+                            ticks: {
+                                autoSkip: false,
+                                beginAtZero: true,
+                                maxRotation: 0
+                            },
+                        }],
+                        yAxes: [{
+                            ticks: {
+                                autoSkip: false,
+                                beginAtZero: true,
+                                maxRotation: 0
+                            },
+                        }]
+                    }
+                }
+            });
         </script>
         
     </body>

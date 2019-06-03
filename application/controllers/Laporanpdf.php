@@ -93,22 +93,29 @@ Class Laporanpdf extends CI_Controller{
         $pdf->Cell(15,6,'Tipe',1,0);
         $pdf->Cell(15,6,'Jumlah',1,0);
         $pdf->Cell(18,6,'Harga(Zak)',1,0);
-        $pdf->Cell(15,6,'Total',1,0);
+        $pdf->Cell(25,6,'Total',1,0);
         $pdf->Cell(20,6,'No Telpon',1,1);
 
         $pdf->SetFont('Arial','',8);
 
         $data = $this->Pesanan_M->Read_Data_Pesanan();
+        $jumlah_total=0;
         foreach ($data as $row){
             $pdf->Cell(35,6,$row['first_name'].' '.$row['last_name'],1,0);
             $pdf->Cell(15,6,$row['npwp'],1,0);
             $pdf->Cell(20,6,$row['tanggal_pemesanan'],1,0);
             $pdf->Cell(15,6,$row['tipe_barang'],1,0);
             $pdf->Cell(15,6,$row['jumlah_barang'],1,0);
-            $pdf->Cell(18,6,$row['harga_zak'],1,0);
-            $pdf->Cell(15,6,$row['harga_total'],1,0);
-            $pdf->Cell(20,6,$row['nomor_telepon'],1,1); 
+            $pdf->Cell(18,6,'Rp. '.number_format($row['harga_zak'], 0, ".", ".").',-',1,0);
+            $pdf->Cell(25,6,'Rp. '.number_format($row['harga_total'], 0, ".", ".").',-',1,0);
+            $pdf->Cell(20,6,$row['nomor_telepon'],1,1);
+            $jumlah_total = $row['harga_total']+$jumlah_total; 
         }
+
+        $pdf->Cell(118,6,'Jumlah',1,0);
+        $pdf->Cell(25,6,'Rp. '.number_format($jumlah_total, 0, ".", ".").',-',1,0);
+
+
 
         $pdf->Output();
     }
@@ -132,22 +139,27 @@ Class Laporanpdf extends CI_Controller{
         $pdf->Cell(15,6,'Tipe',1,0);
         $pdf->Cell(15,6,'Jumlah',1,0);
         $pdf->Cell(18,6,'Harga(Zak)',1,0);
-        $pdf->Cell(15,6,'Total',1,0);
+        $pdf->Cell(25,6,'Total',1,0);
         $pdf->Cell(20,6,'No Telpon',1,1);
 
         $pdf->SetFont('Arial','',8);
+        
         $user = $this->Agen_M->Read_Data_User_Agen($_SESSION['Logged-Agen']['id']);
         $data = $this->Pesanan_M->Read_Data_Pesanan_Agen($_SESSION['Logged-Agen']['id']);
+        $jumlah_total=0;
         foreach ($data as $row){
             $pdf->Cell(35,6,$user->first_name.' '.$user->last_name,1,0);
             $pdf->Cell(15,6,$user->npwp,1,0);
             $pdf->Cell(20,6,$row['tanggal_pemesanan'],1,0);
             $pdf->Cell(15,6,$row['tipe_barang'],1,0);
             $pdf->Cell(15,6,$row['jumlah_barang'],1,0);
-            $pdf->Cell(18,6,$row['harga_zak'],1,0);
-            $pdf->Cell(15,6,$row['harga_total'],1,0);
+            $pdf->Cell(18,6,'Rp. '.number_format($row['harga_zak'], 0, ".", ".").',-',1,0);
+            $pdf->Cell(25,6,'Rp. '.number_format($row['harga_total'], 0, ".", ".").',-',1,0);
             $pdf->Cell(20,6,$row['nomor_telepon'],1,1); 
+            $jumlah_total = $row['harga_total']+$jumlah_total;
         }
+        $pdf->Cell(118,6,'Jumlah',1,0);
+        $pdf->Cell(25,6,'Rp. '.number_format($jumlah_total, 0, ".", ".").',-',1,0);
 
         $pdf->Output();
     }
@@ -171,24 +183,28 @@ Class Laporanpdf extends CI_Controller{
         $pdf->Cell(15,6,'Tipe',1,0);
         $pdf->Cell(15,6,'Jumlah',1,0);
         $pdf->Cell(18,6,'Harga(Zak)',1,0);
-        $pdf->Cell(15,6,'Total',1,0);
+        $pdf->Cell(25,6,'Total',1,0);
         $pdf->Cell(20,6,'No Telpon',1,0);
         $pdf->Cell(20,6,'Status',1,1);
 
         $pdf->SetFont('Arial','',8);
 
         $data = $this->Pesanan_M->Read_Data_Pesanan();
+        $jumlah_total=0;
         foreach ($data as $row){
             $pdf->Cell(35,6,$row['first_name'].' '.$row['last_name'],1,0);
             $pdf->Cell(15,6,$row['npwp'],1,0);
             $pdf->Cell(20,6,$row['tanggal_pemesanan'],1,0);
             $pdf->Cell(15,6,$row['tipe_barang'],1,0);
             $pdf->Cell(15,6,$row['jumlah_barang'],1,0);
-            $pdf->Cell(18,6,$row['harga_zak'],1,0);
-            $pdf->Cell(15,6,$row['harga_total'],1,0);
+            $pdf->Cell(18,6,'Rp. '.number_format($row['harga_zak'], 0, ".", ".").',-',1,0);
+            $pdf->Cell(25,6,'Rp. '.number_format($row['harga_total'], 0, ".", ".").',-',1,0);
             $pdf->Cell(20,6,$row['nomor_telepon'],1,0); 
             $pdf->Cell(20,6,$row['status'],1,1); 
+            $jumlah_total = $row['harga_total']+$jumlah_total;
         }
+        $pdf->Cell(118,6,'Jumlah',1,0);
+        $pdf->Cell(25,6,'Rp. '.number_format($jumlah_total, 0, ".", ".").',-',1,0);
 
         $pdf->Output();
     }
