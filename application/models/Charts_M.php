@@ -15,7 +15,7 @@ class Charts_M extends CI_Model {
     public function Read_Data_Chart_Barang_Tipe($tipe)
     {
         $this->db->select('data_user_agen.first_name AS nama_agen,
-        SUM(IF(tipe_barang = '.$tipe.', jumlah_barang, 0)) AS jumlah');
+        SUM(IF(tipe_barang = "'.$tipe.'", jumlah_barang, 0)) AS jumlah');
         $this->db->from('data_pesanan');
         $this->db->join('data_user_agen', 'data_user_agen.id_agen = data_pesanan.id_agen');
         $this->db->group_by('nama_agen');
