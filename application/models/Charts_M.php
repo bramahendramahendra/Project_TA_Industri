@@ -18,6 +18,7 @@ class Charts_M extends CI_Model {
         SUM(IF(tipe_barang = "'.$tipe.'", jumlah_barang, 0)) AS jumlah');
         $this->db->from('data_pesanan');
         $this->db->join('data_user_agen', 'data_user_agen.id_agen = data_pesanan.id_agen');
+        $this->db->where('status', 'approve');
         $this->db->group_by('nama_agen');
         $query = $this->db->get();
         return $query->result_array();
@@ -29,6 +30,7 @@ class Charts_M extends CI_Model {
         SUM(IF(YEAR(tanggal_pemesanan) = '.$tahun.', jumlah_barang, 0)) AS jumlah');
         $this->db->from('data_pesanan');
         $this->db->where('id_agen', $id);
+        $this->db->where('status', 'approve');
         $this->db->group_by('tipe_barang');
         $query = $this->db->get();
         return $query->result_array();
@@ -49,6 +51,7 @@ class Charts_M extends CI_Model {
         SUM(IF(YEAR(tanggal_pemesanan) = '.$tahun.' and MONTH(tanggal_pemesanan) = '.$bulan.', jumlah_barang, 0)) AS jumlah');
         $this->db->from('data_pesanan');
         $this->db->join('data_user_agen', 'data_user_agen.id_agen = data_pesanan.id_agen');
+        $this->db->where('status', 'approve');
         $this->db->group_by('nama_agen');
         $query = $this->db->get();
         return $query->result_array();
@@ -60,6 +63,7 @@ class Charts_M extends CI_Model {
         SUM(IF(YEAR(tanggal_pemesanan) = '.$tahun.', jumlah_barang, 0)) AS jumlah');
         $this->db->from('data_pesanan');
         $this->db->where('id_agen', $id);
+        $this->db->where('status', 'approve');
         $this->db->group_by('MONTH(tanggal_pemesanan)');
         $query = $this->db->get();
         return $query->result_array();
@@ -85,6 +89,7 @@ class Charts_M extends CI_Model {
         SUM(IF(YEAR(tanggal_pemesanan) = '.$tahun.', jumlah_barang, 0)) AS jumlah');
         $this->db->from('data_pesanan');
         $this->db->join('data_user_agen', 'data_user_agen.id_agen = data_pesanan.id_agen');
+        $this->db->where('status', 'approve');
         $this->db->group_by('nama_agen');
         $query = $this->db->get();
         return $query->result_array();
@@ -96,6 +101,7 @@ class Charts_M extends CI_Model {
         SUM(jumlah_barang) AS jumlah');
         $this->db->from('data_pesanan');
         $this->db->where('id_agen', $id);
+        $this->db->where('status', 'approve');
         $this->db->group_by('YEAR(tanggal_pemesanan)');
         $query = $this->db->get();
         return $query->result_array();

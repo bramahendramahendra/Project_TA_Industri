@@ -68,7 +68,7 @@ class Register extends CI_Controller {
     public function Read_Register() {
         $data = array();
         $data['title'] = 'PT Zetka Niagatama';
-        $data['title_form'] = 'Login Agen';
+        $data['title_form'] = 'Register Agen';
         return $data;
     }
 
